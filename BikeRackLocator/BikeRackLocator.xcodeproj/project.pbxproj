@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C991B5EA96A00465903 /* AppDelegate.swift */; };
+		1E7A0C9C1B5EA96A00465903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9B1B5EA96A00465903 /* ViewController.swift */; };
+		1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9D1B5EA96A00465903 /* Main.storyboard */; };
+		1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA01B5EA96A00465903 /* Images.xcassets */; };
+		1E7A0CA41B5EA96A00465903 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA21B5EA96A00465903 /* LaunchScreen.xib */; };
+		1E7A0CB01B5EA96A00465903 /* BikeRackLocatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0CAF1B5EA96A00465903 /* BikeRackLocatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E7A0CAA1B5EA96A00465903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E7A0C8C1B5EA96900465903 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E7A0C931B5EA96A00465903;
+			remoteInfo = BikeRackLocator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRackLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E7A0C981B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E7A0C991B5EA96A00465903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E7A0C9B1B5EA96A00465903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E7A0C9E1B5EA96A00465903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E7A0CA01B5EA96A00465903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1E7A0CA31B5EA96A00465903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1E7A0CA91B5EA96A00465903 /* BikeRackLocatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeRackLocatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E7A0CAE1B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E7A0CAF1B5EA96A00465903 /* BikeRackLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRackLocatorTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E7A0C911B5EA96A00465903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E7A0CA61B5EA96A00465903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E7A0C8B1B5EA96900465903 = {
+			isa = PBXGroup;
+			children = (
+				1E7A0C961B5EA96A00465903 /* BikeRackLocator */,
+				1E7A0CAC1B5EA96A00465903 /* BikeRackLocatorTests */,
+				1E7A0C951B5EA96A00465903 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E7A0C951B5EA96A00465903 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */,
+				1E7A0CA91B5EA96A00465903 /* BikeRackLocatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E7A0C961B5EA96A00465903 /* BikeRackLocator */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A0C991B5EA96A00465903 /* AppDelegate.swift */,
+				1E7A0C9B1B5EA96A00465903 /* ViewController.swift */,
+				1E7A0C9D1B5EA96A00465903 /* Main.storyboard */,
+				1E7A0CA01B5EA96A00465903 /* Images.xcassets */,
+				1E7A0CA21B5EA96A00465903 /* LaunchScreen.xib */,
+				1E7A0C971B5EA96A00465903 /* Supporting Files */,
+			);
+			path = BikeRackLocator;
+			sourceTree = "<group>";
+		};
+		1E7A0C971B5EA96A00465903 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A0C981B5EA96A00465903 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E7A0CAC1B5EA96A00465903 /* BikeRackLocatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A0CAF1B5EA96A00465903 /* BikeRackLocatorTests.swift */,
+				1E7A0CAD1B5EA96A00465903 /* Supporting Files */,
+			);
+			path = BikeRackLocatorTests;
+			sourceTree = "<group>";
+		};
+		1E7A0CAD1B5EA96A00465903 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E7A0CAE1B5EA96A00465903 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E7A0C931B5EA96A00465903 /* BikeRackLocator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E7A0CB31B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocator" */;
+			buildPhases = (
+				1E7A0C901B5EA96A00465903 /* Sources */,
+				1E7A0C911B5EA96A00465903 /* Frameworks */,
+				1E7A0C921B5EA96A00465903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeRackLocator;
+			productName = BikeRackLocator;
+			productReference = 1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E7A0CA81B5EA96A00465903 /* BikeRackLocatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E7A0CB61B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocatorTests" */;
+			buildPhases = (
+				1E7A0CA51B5EA96A00465903 /* Sources */,
+				1E7A0CA61B5EA96A00465903 /* Frameworks */,
+				1E7A0CA71B5EA96A00465903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E7A0CAB1B5EA96A00465903 /* PBXTargetDependency */,
+			);
+			name = BikeRackLocatorTests;
+			productName = BikeRackLocatorTests;
+			productReference = 1E7A0CA91B5EA96A00465903 /* BikeRackLocatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E7A0C8C1B5EA96900465903 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Kevin Li";
+				TargetAttributes = {
+					1E7A0C931B5EA96A00465903 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					1E7A0CA81B5EA96A00465903 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 1E7A0C931B5EA96A00465903;
+					};
+				};
+			};
+			buildConfigurationList = 1E7A0C8F1B5EA96900465903 /* Build configuration list for PBXProject "BikeRackLocator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E7A0C8B1B5EA96900465903;
+			productRefGroup = 1E7A0C951B5EA96A00465903 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E7A0C931B5EA96A00465903 /* BikeRackLocator */,
+				1E7A0CA81B5EA96A00465903 /* BikeRackLocatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E7A0C921B5EA96A00465903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */,
+				1E7A0CA41B5EA96A00465903 /* LaunchScreen.xib in Resources */,
+				1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E7A0CA71B5EA96A00465903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E7A0C901B5EA96A00465903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E7A0C9C1B5EA96A00465903 /* ViewController.swift in Sources */,
+				1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E7A0CA51B5EA96A00465903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E7A0CB01B5EA96A00465903 /* BikeRackLocatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E7A0CAB1B5EA96A00465903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E7A0C931B5EA96A00465903 /* BikeRackLocator */;
+			targetProxy = 1E7A0CAA1B5EA96A00465903 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E7A0C9D1B5EA96A00465903 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E7A0C9E1B5EA96A00465903 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E7A0CA21B5EA96A00465903 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E7A0CA31B5EA96A00465903 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E7A0CB11B5EA96A00465903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E7A0CB21B5EA96A00465903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E7A0CB41B5EA96A00465903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeRackLocator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1E7A0CB51B5EA96A00465903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BikeRackLocator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1E7A0CB71B5EA96A00465903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeRackLocatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeRackLocator.app/BikeRackLocator";
+			};
+			name = Debug;
+		};
+		1E7A0CB81B5EA96A00465903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BikeRackLocatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeRackLocator.app/BikeRackLocator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E7A0C8F1B5EA96900465903 /* Build configuration list for PBXProject "BikeRackLocator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E7A0CB11B5EA96A00465903 /* Debug */,
+				1E7A0CB21B5EA96A00465903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E7A0CB31B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E7A0CB41B5EA96A00465903 /* Debug */,
+				1E7A0CB51B5EA96A00465903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E7A0CB61B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E7A0CB71B5EA96A00465903 /* Debug */,
+				1E7A0CB81B5EA96A00465903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E7A0C8C1B5EA96900465903 /* Project object */;
+}
