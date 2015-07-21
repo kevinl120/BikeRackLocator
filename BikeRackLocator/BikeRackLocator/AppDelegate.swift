@@ -9,18 +9,20 @@
 import UIKit
 
 import Parse
+import GoogleMaps;
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         // Set up Parse SDK
         Parse.setApplicationId("xAypJzhkukQ9BFgpUZutJVPrfjZViddmxMIM9egt", clientKey: "mwHwaWQmhG559IjmAV7YniN1w2st7hykbUH5No9a")
+        
+        GMSServices.provideAPIKey("AIzaSyDyXuIwE5UoQD-Q2sjZxwG818hWnHu2o3I")
         
         return true
     }
