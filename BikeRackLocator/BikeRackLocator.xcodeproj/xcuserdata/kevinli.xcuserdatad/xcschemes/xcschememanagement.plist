@@ -7,17 +7,17 @@
 		<key>BikeRackLocator.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E7A0C931B5EA96A00465903</key>
+		<key>1E848BC61B600890007D3666</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E7A0CA81B5EA96A00465903</key>
+		<key>1E848BDB1B600890007D3666</key>
 		<dict>
 			<key>primary</key>
 			<true/>
