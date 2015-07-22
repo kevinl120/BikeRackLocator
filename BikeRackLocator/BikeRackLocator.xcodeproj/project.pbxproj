@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1244FB1B6012680030A755 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1244FA1B6012680030A755 /* Social.framework */; };
+		1E1244FD1B6012940030A755 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1244FC1B6012940030A755 /* Accounts.framework */; };
 		1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C991B5EA96A00465903 /* AppDelegate.swift */; };
 		1E7A0C9C1B5EA96A00465903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9B1B5EA96A00465903 /* ViewController.swift */; };
 		1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9D1B5EA96A00465903 /* Main.storyboard */; };
@@ -25,6 +27,7 @@
 		1E7A0CCD1B5EBE2C00465903 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0CCC1B5EBE2C00465903 /* SystemConfiguration.framework */; };
 		1E7A0CCF1B5EBE3B00465903 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0CCE1B5EBE3B00465903 /* libz.dylib */; };
 		1E7A0CD11B5EBE4600465903 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0CD01B5EBE4600465903 /* libsqlite3.dylib */; };
+		DB0F0D340E11D7F3E18C2B38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907D61C78CF7556E9CF7AD67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094EB77D3FE80F8C09C60EB3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1E1244FA1B6012680030A755 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		1E1244FC1B6012940030A755 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRackLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7A0C981B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7A0C991B5EA96A00465903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 		1E7A0CCC1B5EBE2C00465903 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1E7A0CCE1B5EBE3B00465903 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1E7A0CD01B5EBE4600465903 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		907D61C78CF7556E9CF7AD67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1244FD1B6012940030A755 /* Accounts.framework in Frameworks */,
+				1E1244FB1B6012680030A755 /* Social.framework in Frameworks */,
 				1E7A0CD11B5EBE4600465903 /* libsqlite3.dylib in Frameworks */,
 				1E7A0CCF1B5EBE3B00465903 /* libz.dylib in Frameworks */,
 				1E7A0CCD1B5EBE2C00465903 /* SystemConfiguration.framework in Frameworks */,
@@ -79,6 +89,7 @@
 				1E7A0CBF1B5EBDF500465903 /* AudioToolbox.framework in Frameworks */,
 				1E7A0CBD1B5EBDD000465903 /* Parse.framework in Frameworks */,
 				1E7A0CBC1B5EBDD000465903 /* Bolts.framework in Frameworks */,
+				DB0F0D340E11D7F3E18C2B38 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +110,7 @@
 				1E7A0CD41B5EBE7400465903 /* Frameworks */,
 				1E7A0CAC1B5EA96A00465903 /* BikeRackLocatorTests */,
 				1E7A0C951B5EA96A00465903 /* Products */,
+				3EBB1284428797FC062EDDA7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +164,8 @@
 		1E7A0CD41B5EBE7400465903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E1244FC1B6012940030A755 /* Accounts.framework */,
+				1E1244FA1B6012680030A755 /* Social.framework */,
 				1E7A0CD01B5EBE4600465903 /* libsqlite3.dylib */,
 				1E7A0CCE1B5EBE3B00465903 /* libz.dylib */,
 				1E7A0CCC1B5EBE2C00465903 /* SystemConfiguration.framework */,
@@ -164,8 +178,18 @@
 				1E7A0CBE1B5EBDF500465903 /* AudioToolbox.framework */,
 				1E7A0CBA1B5EBDD000465903 /* Bolts.framework */,
 				1E7A0CBB1B5EBDD000465903 /* Parse.framework */,
+				907D61C78CF7556E9CF7AD67 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EBB1284428797FC062EDDA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */,
+				094EB77D3FE80F8C09C60EB3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E7A0CB31B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocator" */;
 			buildPhases = (
+				014293939AA5A4632A5A78F4 /* Check Pods Manifest.lock */,
 				1E7A0C901B5EA96A00465903 /* Sources */,
 				1E7A0C911B5EA96A00465903 /* Frameworks */,
 				1E7A0C921B5EA96A00465903 /* Resources */,
+				1B7B763E95E7C04B050F5E6C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +288,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		014293939AA5A4632A5A78F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B7B763E95E7C04B050F5E6C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E7A0C901B5EA96A00465903 /* Sources */ = {
@@ -396,6 +455,7 @@
 		};
 		1E7A0CB41B5EA96A00465903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -410,6 +470,7 @@
 		};
 		1E7A0CB51B5EA96A00465903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 094EB77D3FE80F8C09C60EB3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -475,6 +536,7 @@
 				1E7A0CB51B5EA96A00465903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E7A0CB61B5EA96A00465903 /* Build configuration list for PBXNativeTarget "BikeRackLocatorTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +545,7 @@
 				1E7A0CB81B5EA96A00465903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
