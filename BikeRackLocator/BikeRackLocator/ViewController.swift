@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BikeRackLocator
 //
-//  Created by Kevin Li on 7/22/15.
+//  Created by Kevin Li on 7/21/15.
 //  Copyright (c) 2015 Kevin Li. All rights reserved.
 //
 
@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E848BC61B600890007D3666"
+               BlueprintIdentifier = "1E7A0C931B5EA96A00465903"
                BuildableName = "BikeRackLocator.app"
                BlueprintName = "BikeRackLocator"
                ReferencedContainer = "container:BikeRackLocator.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E848BDB1B600890007D3666"
+               BlueprintIdentifier = "1E7A0CA81B5EA96A00465903"
                BuildableName = "BikeRackLocatorTests.xctest"
                BlueprintName = "BikeRackLocatorTests"
                ReferencedContainer = "container:BikeRackLocator.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E848BDB1B600890007D3666"
+               BlueprintIdentifier = "1E7A0CA81B5EA96A00465903"
                BuildableName = "BikeRackLocatorTests.xctest"
                BlueprintName = "BikeRackLocatorTests"
                ReferencedContainer = "container:BikeRackLocator.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E848BC61B600890007D3666"
+            BlueprintIdentifier = "1E7A0C931B5EA96A00465903"
             BuildableName = "BikeRackLocator.app"
             BlueprintName = "BikeRackLocator"
             ReferencedContainer = "container:BikeRackLocator.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E848BC61B600890007D3666"
+            BlueprintIdentifier = "1E7A0C931B5EA96A00465903"
             BuildableName = "BikeRackLocator.app"
             BlueprintName = "BikeRackLocator"
             ReferencedContainer = "container:BikeRackLocator.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E848BC61B600890007D3666"
+            BlueprintIdentifier = "1E7A0C931B5EA96A00465903"
             BuildableName = "BikeRackLocator.app"
             BlueprintName = "BikeRackLocator"
             ReferencedContainer = "container:BikeRackLocator.xcodeproj">

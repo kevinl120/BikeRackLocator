@@ -2,7 +2,7 @@
 //  BikeRackLocatorTests.swift
 //  BikeRackLocatorTests
 //
-//  Created by Kevin Li on 7/22/15.
+//  Created by Kevin Li on 7/21/15.
 //  Copyright (c) 2015 Kevin Li. All rights reserved.
 //
 
