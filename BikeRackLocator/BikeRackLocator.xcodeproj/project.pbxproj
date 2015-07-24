@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		1E1244FB1B6012680030A755 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1244FA1B6012680030A755 /* Social.framework */; };
 		1E1244FD1B6012940030A755 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1244FC1B6012940030A755 /* Accounts.framework */; };
+		1E1245001B6014A20030A755 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1244FF1B6014A20030A755 /* MapViewController.swift */; };
+		1E1245021B601C170030A755 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1245011B601C170030A755 /* AddViewController.swift */; };
+		1E12450F1B617F4A0030A755 /* BikeRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12450E1B617F4A0030A755 /* BikeRack.swift */; };
 		1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C991B5EA96A00465903 /* AppDelegate.swift */; };
-		1E7A0C9C1B5EA96A00465903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9B1B5EA96A00465903 /* ViewController.swift */; };
 		1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9D1B5EA96A00465903 /* Main.storyboard */; };
 		1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA01B5EA96A00465903 /* Images.xcassets */; };
 		1E7A0CA41B5EA96A00465903 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA21B5EA96A00465903 /* LaunchScreen.xib */; };
@@ -44,10 +46,12 @@
 		094EB77D3FE80F8C09C60EB3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1E1244FA1B6012680030A755 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1E1244FC1B6012940030A755 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		1E1244FF1B6014A20030A755 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1E1245011B601C170030A755 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		1E12450E1B617F4A0030A755 /* BikeRack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeRack.swift; path = BikeRackLocator/Models/BikeRack.swift; sourceTree = SOURCE_ROOT; };
 		1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRackLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7A0C981B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7A0C991B5EA96A00465903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1E7A0C9B1B5EA96A00465903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1E7A0C9E1B5EA96A00465903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E7A0CA01B5EA96A00465903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1E7A0CA31B5EA96A00465903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -103,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E1244FE1B6014970030A755 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E1244FF1B6014A20030A755 /* MapViewController.swift */,
+				1E1245011B601C170030A755 /* AddViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1E1245081B601C400030A755 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E12450E1B617F4A0030A755 /* BikeRack.swift */,
+			);
+			name = Models;
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		1E7A0C8B1B5EA96900465903 = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +148,9 @@
 		1E7A0C961B5EA96A00465903 /* BikeRackLocator */ = {
 			isa = PBXGroup;
 			children = (
+				1E1244FE1B6014970030A755 /* ViewControllers */,
+				1E1245081B601C400030A755 /* Models */,
 				1E7A0C991B5EA96A00465903 /* AppDelegate.swift */,
-				1E7A0C9B1B5EA96A00465903 /* ViewController.swift */,
 				1E7A0C9D1B5EA96A00465903 /* Main.storyboard */,
 				1E7A0CA01B5EA96A00465903 /* Images.xcassets */,
 				1E7A0CA21B5EA96A00465903 /* LaunchScreen.xib */,
@@ -327,8 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E7A0C9C1B5EA96A00465903 /* ViewController.swift in Sources */,
 				1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */,
+				1E12450F1B617F4A0030A755 /* BikeRack.swift in Sources */,
+				1E1245001B6014A20030A755 /* MapViewController.swift in Sources */,
+				1E1245021B601C170030A755 /* AddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
