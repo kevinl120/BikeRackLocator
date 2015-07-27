@@ -24,24 +24,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         setUpLocationManager()
         
-        // Set up map
-        var camera: GMSCameraPosition!
-        
-        if hasUserLocation() {
-            camera = GMSCameraPosition.cameraWithLatitude(locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude, zoom: 16)
-            findBikeRacks()
-        } else {
-            camera = GMSCameraPosition.cameraWithLatitude(37.33233, longitude: -122.03121, zoom: 16)
-        }
-        
-        mapView.camera = camera
-        mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton = true
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateMap() {
+        // Set up map
+        if hasUserLocation() {
+            mapView.camera = GMSCameraPosition.cameraWithLatitude(locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude, zoom: 16)
+            findBikeRacks()
+        } else {
+            mapView.camera = GMSCameraPosition.cameraWithLatitude(37.33233, longitude: -122.03121, zoom: 16)
+        }
+        
+        mapView.myLocationEnabled = true
+        mapView.settings.myLocationButton = true
     }
     
     // MARK: - Location
@@ -104,6 +105,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             } else {
                 println("Error: \(error!) \(error!.userInfo!)")
             }
+        }
+    }
+    
+    // MARK: - Location Update
+    
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        
+        if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 50 {
+            updateMap()
         }
     }
     
