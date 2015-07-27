@@ -15,7 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     
-    var mapView: GMSMapView!
+    @IBOutlet var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +29,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         if hasUserLocation() {
             camera = GMSCameraPosition.cameraWithLatitude(locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude, zoom: 16)
+            findBikeRacks()
         } else {
             camera = GMSCameraPosition.cameraWithLatitude(37.33233, longitude: -122.03121, zoom: 16)
         }
         
-        mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        mapView.camera = camera
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = true
-        self.view = mapView
-        
-        if hasUserLocation() {
-            findBikeRacks()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,14 +87,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     func findBikeRacks() {
         var query = PFQuery(className: "BikeRack")
         query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude), withinMiles: 0.5)
-        let optionalBikeRackArray = query.findObjects()
-        
-        if let bikeRackArray = optionalBikeRackArray {
-            for bikeRack in bikeRackArray {
-                let bikeRack = bikeRack as! BikeRack
-                var marker = GMSMarker()
-                marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                marker.map = mapView
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let bikeRacks = objects as? [PFObject] {
+                    for bikeRack in bikeRacks {
+                        let bikeRack = bikeRack as! BikeRack
+                        var marker = GMSMarker()
+                        marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
+                        marker.map = self.mapView
+                    }
+                }
+            } else {
+                println("Error: \(error!) \(error!.userInfo!)")
             }
         }
     }

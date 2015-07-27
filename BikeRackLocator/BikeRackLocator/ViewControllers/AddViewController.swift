@@ -13,6 +13,8 @@ import Parse
 
 class AddViewController: UIViewController {
     
+    @IBOutlet var mapView: GMSMapView!
+    
     var latitude: Double!
     var longitude: Double!
     
@@ -33,11 +35,9 @@ class AddViewController: UIViewController {
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("saveButtonPressed")), animated: true)
         
         // Set up map
-        var camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 16)
-        var mapView = GMSMapView.mapWithFrame(CGRectMake(0, 64, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height * 0.5), camera: camera)
+        mapView.camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 16)
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = true
-        self.view.addSubview(mapView)
         
         // Add marker where bike rack location is
         var marker = GMSMarker()
