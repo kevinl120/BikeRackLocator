@@ -9,10 +9,13 @@
 import UIKit
 
 import GoogleMaps
+import Parse
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
+    
+    var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +33,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             camera = GMSCameraPosition.cameraWithLatitude(37.33233, longitude: -122.03121, zoom: 16)
         }
         
-        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = true
         self.view = mapView
+        
+        if hasUserLocation() {
+            findBikeRacks()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +85,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             }
         default:
             return false
+        }
+    }
+    
+    func findBikeRacks() {
+        var query = PFQuery(className: "BikeRack")
+        query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude), withinMiles: 0.5)
+        let optionalBikeRackArray = query.findObjects()
+        
+        if let bikeRackArray = optionalBikeRackArray {
+            for bikeRack in bikeRackArray {
+                let bikeRack = bikeRack as! BikeRack
+                var marker = GMSMarker()
+                marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
+                marker.map = mapView
+            }
         }
     }
     

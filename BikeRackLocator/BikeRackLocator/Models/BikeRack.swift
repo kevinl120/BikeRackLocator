@@ -12,16 +12,30 @@ import Parse
 
 class BikeRack: PFObject, PFSubclassing {
     
-    var uploadTask: UIBackgroundTaskIdentifier?
+    var photoUploadTask: UIBackgroundTaskIdentifier?
+    
+    var image: UIImage?
     
     @NSManaged var location: PFGeoPoint
-    @NSManaged var image: PFFile
+    @NSManaged var imageFile: PFFile
     @NSManaged var title: String?
     
     func upload() {
-        save()
+        let imageData = UIImageJPEGRepresentation(image, 0.8)
+        let imageFile = PFFile(data: imageData)
+        
+        photoUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
+            UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+        }
+        
+        imageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+        }
+        
+        self.imageFile = imageFile
+        
+        saveInBackgroundWithBlock(nil)
     }
-    
     
     // MARK: PFSubclassing Protocol
     

@@ -11,7 +11,6 @@ import UIKit
 import GoogleMaps
 import Parse
 
-
 class AddViewController: UIViewController {
     
     var latitude: Double!
@@ -19,6 +18,9 @@ class AddViewController: UIViewController {
     
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var titleTextField: UITextField!
+    var image: UIImage!
+    
+    var photoTakingHelper: PhotoTakingHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,12 @@ class AddViewController: UIViewController {
         locationTextField.text = "\(latitude), \(longitude)"
     }
 
+    @IBAction func addImage(sender: AnyObject) {
+        photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
+            self.image = image!
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,6 +69,7 @@ class AddViewController: UIViewController {
         let bikeRack = BikeRack()
         bikeRack.title = titleTextField.text
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
+        bikeRack.image = image!
         bikeRack.upload()
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -68,6 +77,6 @@ class AddViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.g
+        // Pass the selected object to the new view controller.
     }
 }
