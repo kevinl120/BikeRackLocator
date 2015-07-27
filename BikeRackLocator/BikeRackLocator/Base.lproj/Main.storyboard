@@ -65,22 +65,46 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-Oe-XnS">
+                                <rect key="frame" x="16" y="414" width="67" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="j6i-hn-QFD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v10-rg-cdC" userLabel="Title Text Field">
+                                <rect key="frame" x="91" y="410" width="493" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eZb-nO-ddh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HkV-jE-VEU" secondAttribute="trailing" constant="16" id="1Cd-X8-1vd"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="top" secondItem="Ij5-36-Zbh" secondAttribute="bottom" constant="8" id="3kS-fU-LW7"/>
+                            <constraint firstItem="j5y-Oe-XnS" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" constant="16" id="67j-Wb-JfQ"/>
                             <constraint firstItem="Ij5-36-Zbh" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" id="67v-UP-FKf"/>
-                            <constraint firstItem="1Cc-nb-Rd7" firstAttribute="top" secondItem="Ij5-36-Zbh" secondAttribute="bottom" constant="12" id="Pi6-Na-uCd"/>
-                            <constraint firstItem="HkV-jE-VEU" firstAttribute="leading" secondItem="1Cc-nb-Rd7" secondAttribute="trailing" constant="8" id="XMA-71-jQW"/>
+                            <constraint firstItem="v10-rg-cdC" firstAttribute="top" secondItem="HkV-jE-VEU" secondAttribute="bottom" constant="8" id="GJE-RC-WWT"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="centerY" secondItem="1Cc-nb-Rd7" secondAttribute="centerY" constant="0.5" id="JRt-eO-Xma"/>
+                            <constraint firstItem="j5y-Oe-XnS" firstAttribute="centerY" secondItem="v10-rg-cdC" secondAttribute="centerY" id="QsM-U1-ey9"/>
+                            <constraint firstItem="j5y-Oe-XnS" firstAttribute="width" secondItem="1Cc-nb-Rd7" secondAttribute="width" id="Wb9-aU-IPP"/>
                             <constraint firstAttribute="trailing" secondItem="Ij5-36-Zbh" secondAttribute="trailing" id="YUr-iE-bwN"/>
-                            <constraint firstItem="HkV-jE-VEU" firstAttribute="top" secondItem="Ij5-36-Zbh" secondAttribute="bottom" constant="8" id="aUE-zg-0e3"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="width" secondItem="v10-rg-cdC" secondAttribute="width" id="cjb-Zw-66z"/>
+                            <constraint firstAttribute="trailing" secondItem="v10-rg-cdC" secondAttribute="trailing" constant="16" id="j0W-DQ-h5y"/>
                             <constraint firstItem="Ij5-36-Zbh" firstAttribute="top" secondItem="ec1-uQ-7Aw" secondAttribute="bottom" id="jmd-Jj-IzJ"/>
-                            <constraint firstAttribute="trailing" secondItem="HkV-jE-VEU" secondAttribute="trailing" constant="16" id="kcZ-8k-FNA"/>
                             <constraint firstItem="Ij5-36-Zbh" firstAttribute="height" secondItem="rf5-91-krT" secondAttribute="height" multiplier="1:2" id="oVM-WP-m4B"/>
-                            <constraint firstItem="1Cc-nb-Rd7" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" constant="16" id="wJg-CZ-UiJ"/>
+                            <constraint firstItem="1Cc-nb-Rd7" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" constant="16" id="sze-3t-vEw"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="leading" secondItem="1Cc-nb-Rd7" secondAttribute="trailing" constant="8" id="yym-An-4Yl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="locationTextField" destination="HkV-jE-VEU" id="5e2-hZ-vSH"/>
+                        <outlet property="titleTextField" destination="v10-rg-cdC" id="MBD-Aj-Bef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQ8-rY-r7h" userLabel="First Responder" sceneMemberID="firstResponder"/>

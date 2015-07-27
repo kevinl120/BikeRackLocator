@@ -18,6 +18,7 @@ class AddViewController: UIViewController {
     var longitude: Double!
     
     @IBOutlet var locationTextField: UITextField!
+    @IBOutlet var titleTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class AddViewController: UIViewController {
     
     func saveButtonPressed() {
         let bikeRack = BikeRack()
-        bikeRack.title = "Test"
+        bikeRack.title = titleTextField.text
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
         bikeRack.upload()
         self.navigationController?.popViewControllerAnimated(true)
@@ -67,9 +68,6 @@ class AddViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        println("Test")
+        // Pass the selected object to the new view controller.g
     }
-    
-
 }
