@@ -21,18 +21,21 @@ class BikeRack: PFObject, PFSubclassing {
     @NSManaged var title: String?
     
     func upload() {
-        let imageData = UIImageJPEGRepresentation(image, 0.8)
-        let imageFile = PFFile(data: imageData)
         
-        photoUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
-            UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+        if let image = image {
+            let imageData = UIImageJPEGRepresentation(image, 0.8)
+            let imageFile = PFFile(data: imageData)
+            
+            photoUploadTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
+                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+            }
+            
+            imageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
+            }
+            
+            self.imageFile = imageFile
         }
-        
-        imageFile.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
-        }
-        
-        self.imageFile = imageFile
         
         saveInBackgroundWithBlock(nil)
     }

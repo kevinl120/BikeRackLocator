@@ -41,6 +41,7 @@ class AddViewController: UIViewController {
         
         // Add marker where bike rack location is
         var marker = GMSMarker()
+        marker.appearAnimation = kGMSMarkerAnimationPop
         marker.position = CLLocationCoordinate2DMake(latitude!, longitude!)
         marker.map = mapView
         
@@ -69,8 +70,13 @@ class AddViewController: UIViewController {
         let bikeRack = BikeRack()
         bikeRack.title = titleTextField.text
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
-        bikeRack.image = image!
+        
+        if let image = image {
+            bikeRack.image = image
+        }
+        
         bikeRack.upload()
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
     

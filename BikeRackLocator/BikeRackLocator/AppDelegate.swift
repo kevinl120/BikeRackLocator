@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set up Parse SDK
         Parse.setApplicationId("xAypJzhkukQ9BFgpUZutJVPrfjZViddmxMIM9egt", clientKey: "mwHwaWQmhG559IjmAV7YniN1w2st7hykbUH5No9a")
+        BikeRack.registerSubclass()
+        
         
         // Set up Google Maps
         GMSServices.provideAPIKey("AIzaSyDyXuIwE5UoQD-Q2sjZxwG818hWnHu2o3I")

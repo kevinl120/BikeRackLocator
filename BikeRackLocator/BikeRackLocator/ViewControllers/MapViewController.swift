@@ -85,6 +85,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func findBikeRacks() {
+        
+        mapView.clear()
+        
         var query = PFQuery(className: "BikeRack")
         query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude), withinMiles: 0.5)
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -93,6 +96,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     for bikeRack in bikeRacks {
                         let bikeRack = bikeRack as! BikeRack
                         var marker = GMSMarker()
+                        marker.appearAnimation = kGMSMarkerAnimationPop
                         marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
                         marker.map = self.mapView
                     }
@@ -120,3 +124,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
     }
 }
+
+
