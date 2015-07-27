@@ -8,7 +8,6 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="BikeRackLocator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -22,18 +21,19 @@
                     <navigationItem key="navigationItem" id="TGh-19-bJO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fk7-qu-Cas">
                             <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="BHG-zE-aFX"/>
                                 <segue destination="WJR-x0-HWx" kind="show" id="JHm-C1-yTX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952" y="-378"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="aMu-Jt-5ht">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ8-rY-r7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WJR-x0-HWx" customClass="AddViewController" customModule="BikeRackLocator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ec1-uQ-7Aw"/>
@@ -43,20 +43,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LK0-sj-5dS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij5-36-Zbh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cc-nb-Rd7">
+                                <rect key="frame" x="16" y="376" width="67" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WWK-M9-a3W"/>
+                                    <constraint firstAttribute="width" constant="67" id="dU1-fM-oLq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HkV-jE-VEU" userLabel="Location Text Field">
+                                <rect key="frame" x="91" y="372" width="493" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oHf-9A-yJG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LK0-sj-5dS" secondAttribute="trailing" id="5hV-vp-Yj1"/>
-                            <constraint firstItem="LK0-sj-5dS" firstAttribute="height" secondItem="rf5-91-krT" secondAttribute="height" multiplier="1:2" id="Uee-a2-RSS"/>
-                            <constraint firstItem="LK0-sj-5dS" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" id="jKa-cQ-opK"/>
-                            <constraint firstItem="LK0-sj-5dS" firstAttribute="top" secondItem="rf5-91-krT" secondAttribute="top" id="wbX-bW-DPi"/>
+                            <constraint firstItem="Ij5-36-Zbh" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" id="67v-UP-FKf"/>
+                            <constraint firstItem="1Cc-nb-Rd7" firstAttribute="top" secondItem="Ij5-36-Zbh" secondAttribute="bottom" constant="12" id="Pi6-Na-uCd"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="leading" secondItem="1Cc-nb-Rd7" secondAttribute="trailing" constant="8" id="XMA-71-jQW"/>
+                            <constraint firstAttribute="trailing" secondItem="Ij5-36-Zbh" secondAttribute="trailing" id="YUr-iE-bwN"/>
+                            <constraint firstItem="HkV-jE-VEU" firstAttribute="top" secondItem="Ij5-36-Zbh" secondAttribute="bottom" constant="8" id="aUE-zg-0e3"/>
+                            <constraint firstItem="Ij5-36-Zbh" firstAttribute="top" secondItem="ec1-uQ-7Aw" secondAttribute="bottom" id="jmd-Jj-IzJ"/>
+                            <constraint firstAttribute="trailing" secondItem="HkV-jE-VEU" secondAttribute="trailing" constant="16" id="kcZ-8k-FNA"/>
+                            <constraint firstItem="Ij5-36-Zbh" firstAttribute="height" secondItem="rf5-91-krT" secondAttribute="height" multiplier="1:2" id="oVM-WP-m4B"/>
+                            <constraint firstItem="1Cc-nb-Rd7" firstAttribute="leading" secondItem="rf5-91-krT" secondAttribute="leading" constant="16" id="wJg-CZ-UiJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="HkV-jE-VEU" id="5e2-hZ-vSH"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ8-rY-r7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2796" y="-378"/>
         </scene>
