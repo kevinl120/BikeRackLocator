@@ -11,7 +11,7 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     let locationManager = CLLocationManager()
     
@@ -24,7 +24,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         setUpLocationManager()
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
+        mapView.delegate = self
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,8 +99,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     for bikeRack in bikeRacks {
                         let bikeRack = bikeRack as! BikeRack
                         var marker = GMSMarker()
-                        marker.appearAnimation = kGMSMarkerAnimationPop
                         marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
+                        marker.infoWindowAnchor = CGPoint(x: 0.6, y: 0.2)
                         marker.map = self.mapView
                     }
                 }
@@ -112,7 +114,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         
-        if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 50 {
+        var test = newLocation.distanceFromLocation(oldLocation)
+        
+        if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 25 {
             updateMap()
         }
     }
@@ -132,6 +136,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
         addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
+    }
+    
+    // MARK: - Google Maps
+    
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        var infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+        infoWindow.title.text = "Test"
+        return infoWindow
     }
 }
 
