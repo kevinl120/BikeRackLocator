@@ -63,7 +63,14 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
     // MARK: - Navigation
     
     func cancelButtonPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+        for viewController in self.navigationController!.viewControllers as Array {
+            if viewController.isKindOfClass(MapViewController) {
+                var mapViewController = viewController as! MapViewController
+                mapViewController.updateMap()
+                self.navigationController?.popToViewController(viewController as! UIViewController, animated: true)
+                break
+            }
+        }
     }
     
     func saveButtonPressed() {
@@ -77,7 +84,7 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         
         bikeRack.upload()
         
-        self.navigationController?.popViewControllerAnimated(true)
+        cancelButtonPressed()
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
