@@ -11,7 +11,7 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet var mapView: GMSMapView!
     
