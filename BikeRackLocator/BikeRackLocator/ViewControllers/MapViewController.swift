@@ -12,11 +12,16 @@ import SystemConfiguration
 import GoogleMaps
 import Parse
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+    
     let locationManager = CLLocationManager()
     
     @IBOutlet var mapView: GMSMapView!
+    
+    var calloutView = SMCalloutView()
+    var emptyCalloutView: UIView?
+    let CalloutYOffset: CGFloat = 40.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Do any additional setup after loading the view.
         
         setUpLocationManager()
+        
+        setUpCalloutViews()
         
         mapView.delegate = self
         
@@ -101,7 +108,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                         let bikeRack = bikeRack as! BikeRack
                         var marker = GMSMarker()
                         marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                        marker.infoWindowAnchor = CGPoint(x: 0.6, y: 0.2)
+                        
+                        if bikeRack.title == "" {
+                            marker.title = "Bike Rack"
+                        } else {
+                            marker.title = bikeRack.title
+                        }
+                    
                         marker.map = self.mapView
                     }
                 }
@@ -109,6 +122,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
+    }
+    
+    // MARK: - Callout Views
+    
+    func setUpCalloutViews() {
+        var button: UIButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
+        button.addTarget(self, action: Selector("calloutButtonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        calloutView.rightAccessoryView = button as UIView
+    }
+    
+    func calloutButtonTapped() {
+        println("tapped right accessory view!")
     }
     
     // MARK: - Connection
@@ -163,6 +189,49 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     // MARK: - Google Maps
+    
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        var anchor = marker.position
+        
+        var point = mapView.projection.pointForCoordinate(anchor)
+        
+        calloutView.title = marker.title
+        calloutView.calloutOffset = CGPoint(x: 0, y: -CalloutYOffset)
+        calloutView.hidden = false
+        
+        var calloutRect = CGRectZero
+        calloutRect.origin = point
+        calloutRect.size = CGSizeZero
+        
+        calloutView.presentCalloutFromRect(calloutRect, inView: mapView, constrainedToView: mapView, animated: true)
+        
+        return self.emptyCalloutView
+    }
+    
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        if mapView.selectedMarker != nil && calloutView.hidden == false {
+            var anchor = mapView.selectedMarker.position
+            var arrowPt = calloutView.backgroundView.arrowPoint
+            var pt = mapView.projection.pointForCoordinate(anchor)
+            
+            pt.x -= arrowPt.x
+            pt.y -= arrowPt.y + CalloutYOffset
+            
+            calloutView.frame = CGRect(origin: pt, size: calloutView.frame.size)
+        } else {
+            calloutView.hidden = true
+        }
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        self.calloutView.hidden = true
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        mapView.selectedMarker = marker
+        return false
+    }
+    
 }
 
 
