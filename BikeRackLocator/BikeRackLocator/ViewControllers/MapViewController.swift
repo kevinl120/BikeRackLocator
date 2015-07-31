@@ -99,28 +99,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         mapView.clear()
         
-        var query = PFQuery(className: "BikeRack")
-        query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude), withinMiles: 0.5)
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let bikeRacks = objects as? [PFObject] {
-                    for bikeRack in bikeRacks {
-                        let bikeRack = bikeRack as! BikeRack
-                        var marker = GMSMarker()
-                        marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                        
-                        if bikeRack.title == "" {
-                            marker.title = "Bike Rack"
-                        } else {
-                            marker.title = bikeRack.title
+        if isConnectedToNetwork() {
+            var query = PFQuery(className: "BikeRack")
+            query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude), withinMiles: 0.5)
+            query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                if error == nil {
+                    if let bikeRacks = objects as? [PFObject] {
+                        for bikeRack in bikeRacks {
+                            let bikeRack = bikeRack as! BikeRack
+                            var marker = GMSMarker()
+                            marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
+                            
+                            if bikeRack.title == "" {
+                                marker.title = "Bike Rack"
+                            } else {
+                                marker.title = bikeRack.title
+                            }
+                            
+                            marker.map = self.mapView
                         }
-                    
-                        marker.map = self.mapView
                     }
+                } else {
+                    println("Error: \(error!) \(error!.userInfo!)")
                 }
-            } else {
-                println("Error: \(error!) \(error!.userInfo!)")
             }
+        } else {
+            connectionError()
         }
     }
     
@@ -139,7 +143,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     // MARK: - Connection
     
-    class func isConnectedToNetwork() -> Bool {
+    func isConnectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
@@ -158,6 +162,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         
         return isReachable && !needsConnection
+    }
+    
+    func connectionError() {
+        
+        if !self.navigationController!.visibleViewController.isKindOfClass(UIAlertController) {
+            let alertController = UIAlertController(title: "You're not connected to the internet", message: "Check your connection and try again", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Location Update
