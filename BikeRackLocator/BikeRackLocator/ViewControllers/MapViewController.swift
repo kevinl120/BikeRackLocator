@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     let locationManager = CLLocationManager()
     
     @IBOutlet var mapView: GMSMapView!
+    @IBOutlet weak var addBikeRackButton: UIButton!
     
     var calloutView = SMCalloutView()
     var emptyCalloutView: UIView?
@@ -34,6 +35,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         mapView.delegate = self
         
+        addBikeRackButton.layer.cornerRadius = 20.0
+        
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
+        
         var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }
 
@@ -47,12 +52,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         if hasUserLocation() {
             mapView.camera = GMSCameraPosition.cameraWithLatitude(locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude, zoom: 16)
             findBikeRacks()
-        } else {
-            mapView.camera = GMSCameraPosition.cameraWithLatitude(37.33233, longitude: -122.03121, zoom: 16)
         }
         
         mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton = true
     }
     
     // MARK: - Mechanics
@@ -109,14 +111,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                             let bikeRack = bikeRack as! BikeRack
                             var marker = GMSMarker()
                             marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                            
-                            if bikeRack.title == "" {
-                                marker.title = "Bike Rack"
-                            } else {
-                                marker.title = bikeRack.title
-                            }
-                            
+                            marker.title = bikeRack.title
                             marker.map = self.mapView
+                            marker.icon = bikeRack.image
+                            marker.snippet = bikeRack.objectId
                         }
                     }
                 } else {
@@ -138,13 +136,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func calloutButtonTapped() {
-        println("tapped right accessory view!")
+        self.performSegueWithIdentifier("showBikeRackInfo", sender: nil)
     }
     
     // MARK: - Connection
     
     func isConnectedToNetwork() -> Bool {
-        
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -180,28 +177,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         
-        var test = newLocation.distanceFromLocation(oldLocation)
-        
         if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 25 {
             updateMap()
         }
-    }
-    
-    // MARK: - Navigation
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        return hasUserLocation()
-    }
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        var addViewController = segue.destinationViewController as! AddViewController
-        
-        addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
-        addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
     }
     
     // MARK: - Google Maps
@@ -246,6 +224,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         mapView.selectedMarker = marker
         return false
+    }
+    
+    // MARK: - Navigation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        return hasUserLocation()
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.destinationViewController.isKindOfClass(AddViewController) {
+            var addViewController = segue.destinationViewController as! AddViewController
+            
+            addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
+            addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
+        } else {
+            var infoViewController = segue.destinationViewController as! InfoViewController
+            
+        }
     }
     
 }

@@ -75,7 +75,13 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
     
     func saveButtonPressed() {
         let bikeRack = BikeRack()
-        bikeRack.title = titleTextField.text
+        
+        if titleTextField.text == "" {
+            bikeRack.title = "Bike Rack"
+        } else {
+            bikeRack.title = titleTextField.text
+        }
+        
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
         
         if let image = image {

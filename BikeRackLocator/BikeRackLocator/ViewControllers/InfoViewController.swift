@@ -10,6 +10,8 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    var bikeRack: BikeRack!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

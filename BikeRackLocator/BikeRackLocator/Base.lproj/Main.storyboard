@@ -21,30 +21,60 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqk-2P-FRI">
+                                <rect key="frame" x="210" y="544" width="180" height="40"/>
+                                <color key="backgroundColor" red="0.56470588235294117" green="0.93333333333333335" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="JzY-2d-6Oj"/>
+                                    <constraint firstAttribute="height" constant="40" id="j2h-sv-M9Q"/>
+                                </constraints>
+                                <state key="normal" title="Add Bike Rack">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WJR-x0-HWx" kind="show" id="in1-hY-W8d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aqk-2P-FRI" secondAttribute="bottom" constant="16" id="4Dx-cO-CjJ"/>
                             <constraint firstItem="jVE-Pg-sO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BeN-ig-ham"/>
                             <constraint firstItem="jVE-Pg-sO0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VXD-C8-byG"/>
                             <constraint firstAttribute="trailing" secondItem="jVE-Pg-sO0" secondAttribute="trailing" id="gdQ-pb-tKE"/>
                             <constraint firstAttribute="bottom" secondItem="jVE-Pg-sO0" secondAttribute="bottom" id="iy2-OK-MlC"/>
+                            <constraint firstAttribute="centerX" secondItem="aqk-2P-FRI" secondAttribute="centerX" id="kAA-aA-I2m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TGh-19-bJO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fk7-qu-Cas">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="BHG-zE-aFX"/>
-                                <segue destination="WJR-x0-HWx" kind="show" id="JHm-C1-yTX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="TGh-19-bJO"/>
                     <connections>
+                        <outlet property="addBikeRackButton" destination="aqk-2P-FRI" id="P2x-pC-oHY"/>
                         <outlet property="mapView" destination="jVE-Pg-sO0" id="mqc-8o-D5W"/>
+                        <segue destination="hbf-k5-bQl" kind="show" identifier="showBikeRackInfo" id="nXj-e9-eVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952" y="-378"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="ZLj-4u-c6e">
+            <objects>
+                <viewController id="hbf-k5-bQl" customClass="InfoViewController" customModule="BikeRackLocator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FHL-R5-IHf"/>
+                        <viewControllerLayoutGuide type="bottom" id="vlz-py-2zA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ym-Qg-DWA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDM-s9-d99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="348"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="aMu-Jt-5ht">
