@@ -39,7 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
-        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
+//        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }

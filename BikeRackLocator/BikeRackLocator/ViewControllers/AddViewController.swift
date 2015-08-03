@@ -30,6 +30,7 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         // Do any additional setup after loading the view.
         
         // Set up navigation bar
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("cancelButtonPressed")), animated: true)
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("saveButtonPressed")), animated: true)
@@ -67,6 +68,7 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
             if viewController.isKindOfClass(MapViewController) {
                 var mapViewController = viewController as! MapViewController
                 mapViewController.updateMap()
+                mapViewController.navigationController?.setNavigationBarHidden(true, animated: true)
                 self.navigationController?.popToViewController(viewController as! UIViewController, animated: true)
                 break
             }

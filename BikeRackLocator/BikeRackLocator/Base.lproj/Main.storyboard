@@ -23,7 +23,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqk-2P-FRI">
                                 <rect key="frame" x="210" y="544" width="180" height="40"/>
-                                <color key="backgroundColor" red="0.56470588235294117" green="0.93333333333333335" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.81568627450980391" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="JzY-2d-6Oj"/>
                                     <constraint firstAttribute="height" constant="40" id="j2h-sv-M9Q"/>
