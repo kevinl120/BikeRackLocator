@@ -21,8 +21,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     @IBOutlet weak var addBikeRackButton: UIButton!
     
     var calloutView = SMCalloutView()
-    var emptyCalloutView: UIView?
+    var emptyCalloutView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     let CalloutYOffset: CGFloat = 40.0
+    
+    var bikeRacksFound: [BikeRack] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +111,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                     if let bikeRacks = objects as? [PFObject] {
                         for bikeRack in bikeRacks {
                             let bikeRack = bikeRack as! BikeRack
+                            
+                            self.bikeRacksFound.append(bikeRack)
+                            
                             var marker = GMSMarker()
                             marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
                             marker.title = bikeRack.title
@@ -185,6 +190,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     // MARK: - Google Maps
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        
+        
+        
         var anchor = marker.position
         
         var point = mapView.projection.pointForCoordinate(anchor)
@@ -223,7 +231,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         mapView.selectedMarker = marker
-        return false
+        return true
     }
     
     // MARK: - Navigation
@@ -245,6 +253,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         } else {
             var infoViewController = segue.destinationViewController as! InfoViewController
             
+            var counter = 0
+            
+            while bikeRacksFound[counter].objectId != mapView.selectedMarker.snippet {
+                counter++
+            }
+            
+            infoViewController.bikeRack = bikeRacksFound[counter]
         }
     }
     

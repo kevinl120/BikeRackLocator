@@ -26,7 +26,7 @@ class PhotoTakingHelper: NSObject {
     
     func showImagePickerController() {
         imagePickerController = UIImagePickerController()
-        imagePickerController!.sourceType = .Camera
+        imagePickerController!.sourceType = .PhotoLibrary
         imagePickerController!.delegate = self
         
         self.viewController.presentViewController(imagePickerController!, animated: true, completion: nil)
