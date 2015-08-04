@@ -40,7 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         addBikeRackButton.layer.cornerRadius = 20.0
         
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }
@@ -184,7 +184,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         
         if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 25 {
-            updateMap()
+            findBikeRacks()
         }
     }
     
