@@ -46,8 +46,13 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         marker.position = CLLocationCoordinate2DMake(latitude!, longitude!)
         marker.map = mapView
         
-        // Set up location text field
+        // Set up text fields
         locationTextField.text = "\(latitude), \(longitude)"
+        locationTextField.enabled = false
+        locationTextField.backgroundColor = UIColor.lightGrayColor()
+        //locationTextField.textColor = UIColor.lightTextColor()
+        
+        titleTextField.placeholder = "Optional"
     }
 
     @IBAction func addImage(sender: AnyObject) {
