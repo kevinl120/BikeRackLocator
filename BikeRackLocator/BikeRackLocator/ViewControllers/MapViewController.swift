@@ -36,13 +36,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         setUpCalloutViews()
         
         mapView.delegate = self
+        mapView.myLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.padding = UIEdgeInsets(top: 50.0, left: 0.0, bottom: 50.0, right: 0.0)
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
+        
+        //var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,9 +64,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             mapView.camera = GMSCameraPosition.cameraWithLatitude(locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude, zoom: 16)
             findBikeRacks()
         }
-        
-        mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton = true
     }
     
     // MARK: - Mechanics
@@ -193,7 +198,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         
-        if oldLocation == nil || newLocation.distanceFromLocation(oldLocation) > 25 {
+        if oldLocation == nil {
+            updateMap()
+        }
+        
+        if newLocation.distanceFromLocation(oldLocation) > 25 {
             findBikeRacks()
         }
     }

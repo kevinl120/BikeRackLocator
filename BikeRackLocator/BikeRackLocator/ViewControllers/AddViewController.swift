@@ -68,7 +68,7 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
             if viewController.isKindOfClass(MapViewController) {
                 var mapViewController = viewController as! MapViewController
                 mapViewController.updateMap()
-                // mapViewController.navigationController?.setNavigationBarHidden(true, animated: true)
+                //mapViewController.navigationController?.setNavigationBarHidden(true, animated: true)
                 self.navigationController?.popToViewController(viewController as! UIViewController, animated: true)
                 break
             }

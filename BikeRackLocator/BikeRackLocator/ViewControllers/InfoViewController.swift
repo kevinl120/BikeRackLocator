@@ -34,8 +34,14 @@ class InfoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+//    
+//    override func viewWillDisappear(animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        if self.isMovingFromParentViewController() {
+//            self.parentViewController?.navigationController?.setNavigationBarHidden(true, animated: true)
+//        }
+//    }
     
     // MARK: - Navigation
 
