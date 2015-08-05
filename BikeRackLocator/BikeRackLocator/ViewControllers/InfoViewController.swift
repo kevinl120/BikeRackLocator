@@ -9,6 +9,7 @@
 import UIKit
 
 import Parse
+import GoogleMaps
 
 class InfoViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class InfoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +29,31 @@ class InfoViewController: UIViewController {
             self.imageView.image = UIImage(data: data!)
         }
         self.titleLabel.text = bikeRack.title
+        
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)) {
+            (let gmsReverseGeocodeResponse: GMSReverseGeocodeResponse!, let error: NSError!) -> Void in
+            
+            let gmsAddress: GMSAddress = gmsReverseGeocodeResponse.firstResult()
+            
+            self.addressLabel.text = "\(gmsAddress.thoroughfare)"
+
+        }    
+//                    println("\ncoordinate.latitude=\(gmsAddress.coordinate.latitude)")
+//                    println("coordinate.longitude=\(gmsAddress.coordinate.longitude)")
+//                    println("thoroughfare=\(gmsAddress.thoroughfare)")
+//                    println("locality=\(gmsAddress.locality)")
+//                    println("subLocality=\(gmsAddress.subLocality)")
+//                    println("administrativeArea=\(gmsAddress.administrativeArea)")
+//                    println("postalCode=\(gmsAddress.postalCode)")
+//                    println("country=\(gmsAddress.country)")
+//                    println("lines=\(gmsAddress.lines)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    
-//    override func viewWillDisappear(animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        
-//        if self.isMovingFromParentViewController() {
-//            self.parentViewController?.navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
-//    }
     
     // MARK: - Navigation
 
