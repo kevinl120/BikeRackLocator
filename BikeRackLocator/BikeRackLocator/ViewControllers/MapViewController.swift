@@ -58,6 +58,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }
         
         mapView.myLocationEnabled = true
+        mapView.settings.myLocationButton = true
     }
     
     // MARK: - Mechanics
@@ -77,6 +78,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             
             let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
+            
+            let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (alertAction) in
+                
+                if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString)
+                {
+                    UIApplication.sharedApplication().openURL(appSettings)
+                }
+            }
+            alertController.addAction(settingsAction)
             
             self.presentViewController(alertController, animated: true, completion: nil)
             
@@ -191,8 +201,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     // MARK: - Google Maps
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-        
-        
         
         var anchor = marker.position
         
