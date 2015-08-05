@@ -36,18 +36,9 @@ class InfoViewController: UIViewController {
             
             let gmsAddress: GMSAddress = gmsReverseGeocodeResponse.firstResult()
             
-            self.addressLabel.text = "\(gmsAddress.thoroughfare)"
+            self.addressLabel.text = "\(gmsAddress.thoroughfare), \(gmsAddress.locality), \(gmsAddress.administrativeArea), \(gmsAddress.postalCode)"
 
-        }    
-//                    println("\ncoordinate.latitude=\(gmsAddress.coordinate.latitude)")
-//                    println("coordinate.longitude=\(gmsAddress.coordinate.longitude)")
-//                    println("thoroughfare=\(gmsAddress.thoroughfare)")
-//                    println("locality=\(gmsAddress.locality)")
-//                    println("subLocality=\(gmsAddress.subLocality)")
-//                    println("administrativeArea=\(gmsAddress.administrativeArea)")
-//                    println("postalCode=\(gmsAddress.postalCode)")
-//                    println("country=\(gmsAddress.country)")
-//                    println("lines=\(gmsAddress.lines)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
