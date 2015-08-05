@@ -37,7 +37,6 @@ class InfoViewController: UIViewController {
             let gmsAddress: GMSAddress = gmsReverseGeocodeResponse.firstResult()
             
             self.addressLabel.text = "\(gmsAddress.thoroughfare), \(gmsAddress.locality), \(gmsAddress.administrativeArea), \(gmsAddress.postalCode)"
-
         }
     }
 

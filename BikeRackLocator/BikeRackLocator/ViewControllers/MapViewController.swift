@@ -38,12 +38,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.delegate = self
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = true
-        mapView.padding = UIEdgeInsets(top: 50.0, left: 0.0, bottom: 50.0, right: 0.0)
+        mapView.padding = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 60.0, right: 0.0)
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
         
+//        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+//        button.frame = CGRectMake(0.0, 0.0, 32.0, 32.0)
+//        button.setTitle("⚙", forState: UIControlState.Normal)
+//        button.titleLabel!.font = UIFont.systemFontOfSize(20.0)
+//        button.titleLabel!.shadowColor = UIColor.blackColor()
+//        button.titleLabel!.shadowOffset = CGSizeMake(0.0, -1.0)
+//        button.addTarget(self, action: nil, forControlEvents: UIControlEvents.TouchUpInside)
+//        button.showsTouchWhenHighlighted = true
+//        
+//        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: button), animated: true)
+        
+//        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "⚙", style: UIBarButtonItemStyle.Plain, target: self, action: nil), animated: true)
         
         //var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
     }
