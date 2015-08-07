@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDyXuIwE5UoQD-Q2sjZxwG818hWnHu2o3I")
         
         // Set up Mixpanel
-        Mixpanel.sharedInstanceWithToken("0e394683032a3e37aa492c6a6b515a26")
-        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-        mixpanel.track("App launched")
+//        Mixpanel.sharedInstanceWithToken("0e394683032a3e37aa492c6a6b515a26")
+//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//        mixpanel.track("App launched")
         
         return true
     }

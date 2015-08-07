@@ -38,7 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.delegate = self
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = true
-        mapView.padding = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 60.0, right: 0.0)
+        mapView.padding = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 60.0, right: 0.0)
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
@@ -58,6 +58,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 //        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "⚙", style: UIBarButtonItemStyle.Plain, target: self, action: nil), animated: true)
         
         //var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMap"), userInfo: nil, repeats: false)
+        
+//        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+//        var visualEffectView = UIVisualEffectView(effect: blurEffect)
+//        visualEffectView.frame = CGRectMake(0, 0, 800, 64)
+//        self.navigationController?.navigationBar.addSubview(visualEffectView)
+//        self.navigationController?.navigationBar.sendSubviewToBack(visualEffectView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func findBikeRacks() {
         
         mapView.clear()
+        bikeRacksFound.removeAll(keepCapacity: false)
         
         if isConnectedToNetwork() {
             var query = PFQuery(className: "BikeRack")
@@ -276,7 +283,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
             addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
         } else {
-            var infoViewController = segue.destinationViewController as! InfoViewController
+            var infoViewController = segue.destinationViewController as! InfoTableViewController
             
             var counter = 0
             
