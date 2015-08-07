@@ -10,7 +10,7 @@ import UIKit
 
 import Parse
 import GoogleMaps
-import Mixpanel
+// import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BikeRack.registerSubclass()
         
         // Set up Google Maps
-        GMSServices.provideAPIKey("AIzaSyDyXuIwE5UoQD-Q2sjZxwG818hWnHu2o3I")
+        GMSServices.provideAPIKey("AIzaSyAFfX1V2LILrFH2rV4vz-7yb2teagR4FC8")
         
         // Set up Mixpanel
 //        Mixpanel.sharedInstanceWithToken("0e394683032a3e37aa492c6a6b515a26")

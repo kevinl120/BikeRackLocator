@@ -283,7 +283,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
             addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
         } else {
-            var infoViewController = segue.destinationViewController as! InfoTableViewController
+            var infoViewController = segue.destinationViewController as! InfoViewController
             
             var counter = 0
             

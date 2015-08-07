@@ -12,7 +12,7 @@
 		1E1245001B6014A20030A755 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1244FF1B6014A20030A755 /* MapViewController.swift */; };
 		1E1245021B601C170030A755 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1245011B601C170030A755 /* AddViewController.swift */; };
 		1E12450F1B617F4A0030A755 /* BikeRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12450E1B617F4A0030A755 /* BikeRack.swift */; };
-		1E69D3381B73CA81007B23C6 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E69D3371B73CA81007B23C6 /* InfoTableViewController.swift */; };
+		1E77C08D1B751C8500F703B1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E77C08C1B751C8500F703B1 /* InfoViewController.swift */; };
 		1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C991B5EA96A00465903 /* AppDelegate.swift */; };
 		1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9D1B5EA96A00465903 /* Main.storyboard */; };
 		1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA01B5EA96A00465903 /* Images.xcassets */; };
@@ -126,7 +126,7 @@
 		1E1244FF1B6014A20030A755 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E1245011B601C170030A755 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1E12450E1B617F4A0030A755 /* BikeRack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeRack.swift; path = BikeRackLocator/Models/BikeRack.swift; sourceTree = SOURCE_ROOT; };
-		1E69D3371B73CA81007B23C6 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		1E77C08C1B751C8500F703B1 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRackLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7A0C981B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7A0C991B5EA96A00465903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 			children = (
 				1E1244FF1B6014A20030A755 /* MapViewController.swift */,
 				1E1245011B601C170030A755 /* AddViewController.swift */,
-				1E69D3371B73CA81007B23C6 /* InfoTableViewController.swift */,
+				1E77C08C1B751C8500F703B1 /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -755,7 +755,6 @@
 				1E9CD1891B72A94900A9FFE5 /* MPABTestDesignerSnapshotResponseMessage.m in Sources */,
 				1E9CD1951B72A94900A9FFE5 /* MPDesignerEventBindingRequestMesssage.m in Sources */,
 				1E9CD1B71B72A94900A9FFE5 /* MPVariant.m in Sources */,
-				1E69D3381B73CA81007B23C6 /* InfoTableViewController.swift in Sources */,
 				1E9CD1A11B72A94900A9FFE5 /* MPObjectSerializer.m in Sources */,
 				1E12450F1B617F4A0030A755 /* BikeRack.swift in Sources */,
 				1E1245001B6014A20030A755 /* MapViewController.swift in Sources */,
@@ -770,6 +769,7 @@
 				1E9CD1B01B72A94900A9FFE5 /* MPTypeDescription.m in Sources */,
 				1E9CD1871B72A94900A9FFE5 /* MPABTestDesignerDisconnectMessage.m in Sources */,
 				1E9CD19E1B72A94900A9FFE5 /* MPNSNumberToCGFloatValueTransformer.m in Sources */,
+				1E77C08D1B751C8500F703B1 /* InfoViewController.swift in Sources */,
 				1E9CD18B1B72A94900A9FFE5 /* MPABTestDesignerTweakResponseMessage.m in Sources */,
 				1E9CD1831B72A94900A9FFE5 /* MPABTestDesignerClearResponseMessage.m in Sources */,
 				1E9CD1A71B72A94900A9FFE5 /* MPSurvey.m in Sources */,

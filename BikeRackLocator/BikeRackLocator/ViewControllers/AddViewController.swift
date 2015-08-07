@@ -18,6 +18,7 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
     var latitude: Double!
     var longitude: Double!
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var titleTextField: UITextField!
     var image: UIImage!
