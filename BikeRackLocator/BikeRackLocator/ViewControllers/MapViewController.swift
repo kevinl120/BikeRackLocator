@@ -65,7 +65,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 //        self.navigationController?.navigationBar.addSubview(visualEffectView)
 //        self.navigationController?.navigationBar.sendSubviewToBack(visualEffectView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

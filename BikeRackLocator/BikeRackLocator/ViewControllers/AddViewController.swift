@@ -18,7 +18,6 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
     var latitude: Double!
     var longitude: Double!
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var titleTextField: UITextField!
     var image: UIImage!
@@ -35,6 +34,8 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("cancelButtonPressed")), animated: true)
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("saveButtonPressed")), animated: true)
         
+        drawDisplay()
+        
         // Set up map
         mapView.camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 17)
         
@@ -50,9 +51,33 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         locationTextField.backgroundColor = UIColor.lightGrayColor()
         //locationTextField.textColor = UIColor.lightTextColor()
         
-        titleTextField.placeholder = "Optional"
     }
 
+    func drawDisplay() {
+        
+        // Edit map view display
+        mapView.layer.cornerRadius = 10.0
+        mapView.clipsToBounds = true;
+        //        mapView.padding = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+        
+        //        var shadowPath = UIBezierPath(roundedRect: mapView.bounds, cornerRadius: 20.0)
+        //        mapView.layer.masksToBounds = false
+        //        mapView.layer.shadowColor = UIColor.blackColor().CGColor
+        //        mapView.layer.shadowOffset = CGSizeMake(5.0, 5.0)
+        //        mapView.layer.shadowOpacity = 1.0
+        //        mapView.layer.shadowRadius = 1.0
+        //        mapView.layer.shadowPath = shadowPath.CGPath
+        
+        var lineView = UIView(frame: CGRectMake(8, (mapView.bounds.height + 150), (self.view.bounds.size.width - 40), 1))
+        lineView.backgroundColor = UIColor.lightGrayColor()
+        self.view.addSubview(lineView)
+        
+//        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 1)];
+//        lineView.backgroundColor = [UIColor blackColor];
+//        [self.view addSubview:lineView];
+//        [lineView release];
+    }
+    
     @IBAction func addImage(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
             self.image = image!

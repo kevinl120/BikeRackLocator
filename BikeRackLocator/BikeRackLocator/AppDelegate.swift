@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Set navbar font
+        let navigationController = window!.rootViewController as! UINavigationController
+        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName : (UIFont(name: "OpenSans", size: 16))!]
+        
+        // Set bar button font
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "OpenSans", size: 17.0)!], forState: UIControlState.Normal)
+        
         // Set up Parse SDK
         Parse.setApplicationId("xAypJzhkukQ9BFgpUZutJVPrfjZViddmxMIM9egt", clientKey: "mwHwaWQmhG559IjmAV7YniN1w2st7hykbUH5No9a")
         BikeRack.registerSubclass()
