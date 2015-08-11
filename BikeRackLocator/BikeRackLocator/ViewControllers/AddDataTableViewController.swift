@@ -61,7 +61,7 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBAction func addImage(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
-            self.delegate.imageFile = image
+            self.delegate.image = image
         })
     }
     
@@ -83,8 +83,7 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
             break;
         }
         
-        if (range.length + range.location > count(textField.text) )
-        {
+        if (range.length + range.location > count(textField.text)) {
             return false;
         }
         
@@ -98,25 +97,15 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
             }
             return false
         } else {
+            if textField == titleTextField {
+                delegate.bikeRackTitle = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            } else {
+                delegate.bikeRackDescription = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            }
+            
             return true
         }
 
-//        switch textField {
-//        case titleTextField:
-//            if (titleTextField.text.length - range.length + text.length > maxLength) {
-        
-//                if (text.length > 1) { // only show popup if cut-and-pasting:
-//                    var message = "That description is too long. Keep it under \(maxLength) characters.";
-//                    var alert = [[UIAlertView alloc] initWithTitle:"Oops!"
-//                    message:message
-//                    delegate:nil
-//                    cancelButtonTitle:@"OK"
-//                    otherButtonTitles:nil];
-//                    [alert show];
-//                }
-//                return false;
-//            }
-//        }
     }
 
     // MARK: - Table view data source

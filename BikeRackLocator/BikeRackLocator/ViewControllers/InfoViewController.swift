@@ -37,7 +37,7 @@ class InfoViewController: UIViewController {
             marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
             marker.map = mapView
         
-        self.titleLabel.text = bikeRack.title
+        self.titleLabel.text = bikeRack.bikeRackTitle
         
 //        let geocoder = GMSGeocoder()
 //        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)) {

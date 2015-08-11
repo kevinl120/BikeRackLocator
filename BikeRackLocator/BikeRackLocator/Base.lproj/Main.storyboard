@@ -212,7 +212,6 @@
         <!--Add Data Table View Controller-->
         <scene sceneID="mdI-RF-i6K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aPG-kP-ipT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="DJt-QV-BCT" customClass="AddDataTableViewController" customModule="BikeRackLocator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xlh-kx-7m7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
@@ -318,6 +317,7 @@
                         <outlet property="titleTextField" destination="v10-rg-cdC" id="Yk7-EB-RWs"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPG-kP-ipT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2807" y="255"/>
         </scene>

@@ -18,7 +18,8 @@ class BikeRack: PFObject, PFSubclassing {
     
     @NSManaged var location: PFGeoPoint
     @NSManaged var imageFile: PFFile
-    @NSManaged var title: String?
+    @NSManaged var bikeRackTitle: String?
+    @NSManaged var bikeRackDescription: String?
     
     func upload() {
         

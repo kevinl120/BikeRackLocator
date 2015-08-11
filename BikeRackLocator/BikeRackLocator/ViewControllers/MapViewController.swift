@@ -146,7 +146,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                             
                             var marker = GMSMarker()
                             marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                            marker.title = bikeRack.title
+                            marker.title = bikeRack.bikeRackTitle
                             marker.map = self.mapView
                             marker.icon = bikeRack.image
                             marker.snippet = bikeRack.objectId

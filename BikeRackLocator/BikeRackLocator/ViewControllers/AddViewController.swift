@@ -19,7 +19,7 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
     var longitude: Double!
     var bikeRackTitle: String!
     var bikeRackDescription: String!
-    var imageFile: UIImage!
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,25 +80,26 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
     
     func saveButtonPressed() {
         println("savePressed")
-        println(self.bikeRackTitle)
-        println(self.bikeRackDescription)
-//        let bikeRack = BikeRack()
-//        
-//        if titleTextField.text == "" {
-//            bikeRack.title = "Bike Rack 1"
-//        } else {
-//            bikeRack.title = titleTextField.text
-//        }
-//    
-//        bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
-//        
-//        if let imageFile = image {
-//            bikeRack.imageFile = image
-//        }
-//
-//        bikeRack.upload()
-//        
-//        cancelButtonPressed()
+        
+        let bikeRack = BikeRack()
+        
+        if bikeRackTitle == "" {
+            bikeRack.bikeRackTitle = "Bike Rack 1"
+        } else {
+            bikeRack.bikeRackTitle = bikeRackTitle
+        }
+        
+        bikeRack.bikeRackDescription = bikeRackDescription
+    
+        bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
+        
+        if let image = image {
+            bikeRack.image = image
+        }
+
+        bikeRack.upload()
+        
+        cancelButtonPressed()
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -119,7 +120,7 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
 protocol AddDataTableViewControllerProtocol {
     var bikeRackTitle: String! {get set}
     var bikeRackDescription: String! {get set}
-    var imageFile: UIImage! {get set}
+    var image: UIImage! {get set}
 }
 
 
