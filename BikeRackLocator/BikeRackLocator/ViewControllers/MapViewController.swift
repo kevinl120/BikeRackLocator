@@ -199,6 +199,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func connectionError() {
         
         if !self.navigationController!.visibleViewController.isKindOfClass(UIAlertController) {
+            
             let alertController = UIAlertController(title: "You're not connected to the internet", message: "Check your connection and try again", preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)

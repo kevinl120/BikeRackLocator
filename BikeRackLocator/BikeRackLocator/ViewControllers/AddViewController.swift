@@ -11,18 +11,15 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class AddViewController: UIViewController, GMSMapViewDelegate {
+class AddViewController: UIViewController, AddDataTableViewControllerProtocol, GMSMapViewDelegate {
     
     @IBOutlet var mapView: GMSMapView!
     
     var latitude: Double!
     var longitude: Double!
-    
-    @IBOutlet var locationTextField: UITextField!
-    @IBOutlet var titleTextField: UITextField!
-    var image: UIImage!
-    
-    var photoTakingHelper: PhotoTakingHelper?
+    var bikeRackTitle: String!
+    var bikeRackDescription: String!
+    var imageFile: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +42,6 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         marker.position = CLLocationCoordinate2DMake(latitude!, longitude!)
         marker.map = mapView
         
-        // Set up text fields
-        locationTextField.text = "\(latitude), \(longitude)"
-        locationTextField.enabled = false
-        locationTextField.backgroundColor = UIColor.lightGrayColor()
-        //locationTextField.textColor = UIColor.lightTextColor()
-        
     }
 
     func drawDisplay() {
@@ -67,21 +58,6 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
         //        mapView.layer.shadowOpacity = 1.0
         //        mapView.layer.shadowRadius = 1.0
         //        mapView.layer.shadowPath = shadowPath.CGPath
-        
-        var lineView = UIView(frame: CGRectMake(8, (mapView.bounds.height + 150), (self.view.bounds.size.width - 40), 1))
-        lineView.backgroundColor = UIColor.lightGrayColor()
-        self.view.addSubview(lineView)
-        
-//        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 1)];
-//        lineView.backgroundColor = [UIColor blackColor];
-//        [self.view addSubview:lineView];
-//        [lineView release];
-    }
-    
-    @IBAction func addImage(sender: AnyObject) {
-        photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
-            self.image = image!
-        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,28 +79,47 @@ class AddViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func saveButtonPressed() {
-        let bikeRack = BikeRack()
-        
-        if titleTextField.text == "" {
-            bikeRack.title = "Bike Rack"
-        } else {
-            bikeRack.title = titleTextField.text
-        }
-        
-        bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
-        
-        if let image = image {
-            bikeRack.image = image
-        }
-        
-        bikeRack.upload()
-        
-        cancelButtonPressed()
+        println("savePressed")
+        println(self.bikeRackTitle)
+        println(self.bikeRackDescription)
+//        let bikeRack = BikeRack()
+//        
+//        if titleTextField.text == "" {
+//            bikeRack.title = "Bike Rack 1"
+//        } else {
+//            bikeRack.title = titleTextField.text
+//        }
+//    
+//        bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
+//        
+//        if let imageFile = image {
+//            bikeRack.imageFile = image
+//        }
+//
+//        bikeRack.upload()
+//        
+//        cancelButtonPressed()
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showDataEntry" {
+            // create a new Note and hold on to it, to be able to save it later
+            let addDataTableViewController = segue.destinationViewController as! AddDataTableViewController
+            addDataTableViewController.latitude = self.latitude
+            addDataTableViewController.longitude = self.longitude
+            addDataTableViewController.delegate = self;
+        }
     }
 }
+
+protocol AddDataTableViewControllerProtocol {
+    var bikeRackTitle: String! {get set}
+    var bikeRackDescription: String! {get set}
+    var imageFile: UIImage! {get set}
+}
+
+
