@@ -88,8 +88,6 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         } else {
             bikeRack.bikeRackTitle = "Bike Rack"
         }
-        
-        bikeRack.bikeRackDescription = bikeRackDescription
     
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
         

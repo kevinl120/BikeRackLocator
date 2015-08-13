@@ -14,7 +14,6 @@ class Flag: PFObject, PFSubclassing {
     
     @NSManaged var flagDescription: String
     @NSManaged var votes: NSNumber
-    @NSManaged var bikeRack: BikeRack
     
     func upload() {
         saveInBackgroundWithBlock(nil)
