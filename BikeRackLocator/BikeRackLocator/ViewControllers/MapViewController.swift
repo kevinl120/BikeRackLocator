@@ -42,6 +42,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
+        var timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("findBikeRacks"), userInfo: nil, repeats: false)
+        
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
         
 //        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
@@ -221,9 +223,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             updateMap()
         }
         
-        if newLocation.distanceFromLocation(oldLocation) > 25 && mapView.selectedMarker == nil {
-            findBikeRacks()
-        }
+//        if newLocation.distanceFromLocation(oldLocation) > 25 && mapView.selectedMarker == nil {
+//            findBikeRacks()
+//        }
     }
     
     // MARK: - Google Maps

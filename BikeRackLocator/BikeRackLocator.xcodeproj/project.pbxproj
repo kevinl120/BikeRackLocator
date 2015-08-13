@@ -103,8 +103,6 @@
 		1E9CD1C41B72A9AE00A9FFE5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD1C31B72A9AE00A9FFE5 /* Accelerate.framework */; };
 		1E9CD1C61B72A9C400A9FFE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD1C51B72A9C400A9FFE5 /* UIKit.framework */; };
 		1E9CD1C81B72A9C900A9FFE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD1C71B72A9C900A9FFE5 /* Foundation.framework */; };
-		1EB29AAD1B6BF78A00033459 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB29AAB1B6BF78A00033459 /* SMCalloutView.m */; };
-		1EB29AAE1B6BF78A00033459 /* SMCalloutView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1EB29AAC1B6BF78A00033459 /* SMCalloutView.podspec */; };
 		1ED54A051B786E8100B58FFA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED549FB1B786E8100B58FFA /* OpenSans-Bold.ttf */; };
 		1ED54A061B786E8100B58FFA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED549FC1B786E8100B58FFA /* OpenSans-BoldItalic.ttf */; };
 		1ED54A071B786E8100B58FFA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED549FD1B786E8100B58FFA /* OpenSans-ExtraBold.ttf */; };
@@ -117,6 +115,8 @@
 		1ED54A0E1B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED54A041B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf */; };
 		1ED54A111B79154900B58FFA /* AddDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */; };
 		1ED54A161B7A8B5900B58FFA /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED54A151B7A8B5900B58FFA /* Flag.swift */; };
+		1EFA739D1B7CFEC50038DCA2 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */; };
+		1EFA739F1B7CFECD0038DCA2 /* SMCalloutView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */; };
 		1EFFD9E41B66926C00A0074A /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */; };
 		DB0F0D340E11D7F3E18C2B38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907D61C78CF7556E9CF7AD67 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -288,9 +288,6 @@
 		1E9CD1C51B72A9C400A9FFE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1E9CD1C71B72A9C900A9FFE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1EB29AA91B6BF78900033459 /* BikeRackLocator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikeRackLocator-Bridging-Header.h"; sourceTree = "<group>"; };
-		1EB29AAA1B6BF78A00033459 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMCalloutView.h; path = "../../../../../../../Downloads/calloutview-master/SMCalloutView.h"; sourceTree = "<group>"; };
-		1EB29AAB1B6BF78A00033459 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMCalloutView.m; path = "../../../../../../../Downloads/calloutview-master/SMCalloutView.m"; sourceTree = "<group>"; };
-		1EB29AAC1B6BF78A00033459 /* SMCalloutView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SMCalloutView.podspec; path = "../../../../../../../Downloads/calloutview-master/SMCalloutView.podspec"; sourceTree = "<group>"; };
 		1ED549FB1B786E8100B58FFA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		1ED549FC1B786E8100B58FFA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		1ED549FD1B786E8100B58FFA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -303,6 +300,9 @@
 		1ED54A041B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataTableViewController.swift; sourceTree = "<group>"; };
 		1ED54A151B7A8B5900B58FFA /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flag.swift; path = BikeRackLocator/Models/Flag.swift; sourceTree = SOURCE_ROOT; };
+		1EFA739B1B7CFEC50038DCA2 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCalloutView.h; sourceTree = "<group>"; };
+		1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCalloutView.m; sourceTree = "<group>"; };
+		1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SMCalloutView.podspec; sourceTree = "<group>"; };
 		1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		907D61C78CF7556E9CF7AD67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -589,10 +589,10 @@
 		1EB29AA81B6BF75200033459 /* CalloutView */ = {
 			isa = PBXGroup;
 			children = (
-				1EB29AAA1B6BF78A00033459 /* SMCalloutView.h */,
-				1EB29AAB1B6BF78A00033459 /* SMCalloutView.m */,
-				1EB29AAC1B6BF78A00033459 /* SMCalloutView.podspec */,
+				1EFA739B1B7CFEC50038DCA2 /* SMCalloutView.h */,
+				1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */,
 				1EB29AA91B6BF78900033459 /* BikeRackLocator-Bridging-Header.h */,
+				1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */,
 			);
 			path = CalloutView;
 			sourceTree = "<group>";
@@ -715,7 +715,6 @@
 			files = (
 				1E9CD17D1B72A94900A9FFE5 /* Media.xcassets in Resources */,
 				1E9CD1BB1B72A94900A9FFE5 /* snapshot_config.json in Resources */,
-				1EB29AAE1B6BF78A00033459 /* SMCalloutView.podspec in Resources */,
 				1ED54A0A1B786E8100B58FFA /* OpenSans-Light.ttf in Resources */,
 				1ED54A061B786E8100B58FFA /* OpenSans-BoldItalic.ttf in Resources */,
 				1E9CD19B1B72A94900A9FFE5 /* MPNotification.storyboard in Resources */,
@@ -728,6 +727,7 @@
 				1ED54A0D1B786E8100B58FFA /* OpenSans-Semibold.ttf in Resources */,
 				1ED54A051B786E8100B58FFA /* OpenSans-Bold.ttf in Resources */,
 				1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */,
+				1EFA739F1B7CFECD0038DCA2 /* SMCalloutView.podspec in Resources */,
 				1ED54A0C1B786E8100B58FFA /* OpenSans-Regular.ttf in Resources */,
 				1ED54A071B786E8100B58FFA /* OpenSans-ExtraBold.ttf in Resources */,
 				1ED54A0E1B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf in Resources */,
@@ -793,7 +793,6 @@
 				1E9CD1991B72A94900A9FFE5 /* MPEventBinding.m in Sources */,
 				1E9CD1881B72A94900A9FFE5 /* MPABTestDesignerSnapshotRequestMessage.m in Sources */,
 				1E9CD1B91B72A94900A9FFE5 /* NSData+MPBase64.m in Sources */,
-				1EB29AAD1B6BF78A00033459 /* SMCalloutView.m in Sources */,
 				1E9CD1A01B72A94900A9FFE5 /* MPObjectSelector.m in Sources */,
 				1E9CD1A31B72A94900A9FFE5 /* MPObjectSerializerContext.m in Sources */,
 				1E9CD1B81B72A94900A9FFE5 /* MPWebSocket.m in Sources */,
@@ -844,6 +843,7 @@
 				1E9CD1B41B72A94900A9FFE5 /* MPUIFontToNSDictionaryValueTransformer.m in Sources */,
 				1E9CD1BD1B72A94900A9FFE5 /* UIColor+MPColor.m in Sources */,
 				1E9CD18F1B72A94900A9FFE5 /* MPCGAffineTransformToNSDictionaryValueTransformer.m in Sources */,
+				1EFA739D1B7CFEC50038DCA2 /* SMCalloutView.m in Sources */,
 				1E9CD17E1B72A94900A9FFE5 /* Mixpanel.m in Sources */,
 				1E1245021B601C170030A755 /* AddViewController.swift in Sources */,
 				1E9CD1921B72A94900A9FFE5 /* MPCGRectToNSDictionaryValueTransformer.m in Sources */,
