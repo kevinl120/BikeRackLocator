@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GoogleMaps
+
 class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
     
     var delegate: AddDataTableViewControllerProtocol!
@@ -50,6 +52,16 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
         
         // Set up text fields
         locationTextField.text = "\(latitude), \(longitude)"
+        
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(latitude, longitude)) {
+            (let gmsReverseGeocodeResponse: GMSReverseGeocodeResponse!, let error: NSError!) -> Void in
+            
+            let gmsAddress: GMSAddress = gmsReverseGeocodeResponse.firstResult()
+            self.locationTextField.text = "\(gmsAddress.thoroughfare), \(gmsAddress.locality), \(gmsAddress.administrativeArea) \(gmsAddress.postalCode)"
+        }
+
+        
         locationTextField.enabled = false
         //locationTextField.backgroundColor = UIColor.lightGrayColor()
         
@@ -123,7 +135,7 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
         return 0
     }
     */
-
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell

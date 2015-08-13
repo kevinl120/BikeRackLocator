@@ -42,7 +42,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("findBikeRacks"), userInfo: nil, repeats: false)
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("findBikeRacks"), userInfo: nil, repeats: false)
         
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
         
@@ -290,7 +290,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
             addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
         } else {
-            var infoViewController = segue.destinationViewController as! InfoViewController
+            var infoViewController = segue.destinationViewController as! InfoTableViewController
             
             var counter = 0
             
@@ -299,25 +299,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             }
             
             infoViewController.bikeRack = bikeRacksFound[counter]
-            
-//            if isConnectedToNetwork() {
-//                var query = PFQuery(className: "BikeRack")
-//                query.whereKey("objectID", equalTo: mapView.selectedMarker.snippet)
-//                query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-//                    if error == nil {
-//                        if let bikeRacks = objects as? [PFObject] {
-//                            for bikeRack in bikeRacks {
-//                                let bikeRack = bikeRack as! BikeRack
-//                                infoViewController.bikeRack = bikeRack
-//                            }
-//                        }
-//                    } else {
-//                        println("Error: \(error!) \(error!.userInfo!)")
-//                    }
-//                }
-//            } else {
-//                connectionError()
-//            }
         }
     }
     

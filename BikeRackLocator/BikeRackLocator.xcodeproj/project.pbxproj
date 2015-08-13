@@ -12,7 +12,6 @@
 		1E1245001B6014A20030A755 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1244FF1B6014A20030A755 /* MapViewController.swift */; };
 		1E1245021B601C170030A755 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1245011B601C170030A755 /* AddViewController.swift */; };
 		1E12450F1B617F4A0030A755 /* BikeRack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12450E1B617F4A0030A755 /* BikeRack.swift */; };
-		1E77C08D1B751C8500F703B1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E77C08C1B751C8500F703B1 /* InfoViewController.swift */; };
 		1E7A0C9A1B5EA96A00465903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0C991B5EA96A00465903 /* AppDelegate.swift */; };
 		1E7A0C9F1B5EA96A00465903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0C9D1B5EA96A00465903 /* Main.storyboard */; };
 		1E7A0CA11B5EA96A00465903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7A0CA01B5EA96A00465903 /* Images.xcassets */; };
@@ -117,6 +116,7 @@
 		1ED54A161B7A8B5900B58FFA /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED54A151B7A8B5900B58FFA /* Flag.swift */; };
 		1EFA739D1B7CFEC50038DCA2 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */; };
 		1EFA739F1B7CFECD0038DCA2 /* SMCalloutView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */; };
+		1EFA73A31B7D01BC0038DCA2 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */; };
 		1EFFD9E41B66926C00A0074A /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */; };
 		DB0F0D340E11D7F3E18C2B38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907D61C78CF7556E9CF7AD67 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -138,7 +138,6 @@
 		1E1244FF1B6014A20030A755 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E1245011B601C170030A755 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1E12450E1B617F4A0030A755 /* BikeRack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeRack.swift; path = BikeRackLocator/Models/BikeRack.swift; sourceTree = SOURCE_ROOT; };
-		1E77C08C1B751C8500F703B1 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1E7A0C941B5EA96A00465903 /* BikeRackLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRackLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7A0C981B5EA96A00465903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7A0C991B5EA96A00465903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +302,7 @@
 		1EFA739B1B7CFEC50038DCA2 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCalloutView.h; sourceTree = "<group>"; };
 		1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCalloutView.m; sourceTree = "<group>"; };
 		1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SMCalloutView.podspec; sourceTree = "<group>"; };
+		1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		907D61C78CF7556E9CF7AD67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,9 +349,9 @@
 			isa = PBXGroup;
 			children = (
 				1E1244FF1B6014A20030A755 /* MapViewController.swift */,
-				1E77C08C1B751C8500F703B1 /* InfoViewController.swift */,
 				1E1245011B601C170030A755 /* AddViewController.swift */,
 				1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */,
+				1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -815,6 +815,7 @@
 				1E1245001B6014A20030A755 /* MapViewController.swift in Sources */,
 				1E9CD1981B72A94900A9FFE5 /* MPEnumDescription.m in Sources */,
 				1E9CD19F1B72A94900A9FFE5 /* MPObjectIdentityProvider.m in Sources */,
+				1EFA73A31B7D01BC0038DCA2 /* InfoTableViewController.swift in Sources */,
 				1E9CD1BA1B72A94900A9FFE5 /* NSInvocation+MPHelpers.m in Sources */,
 				1E9CD18C1B72A94900A9FFE5 /* MPApplicationStateSerializer.m in Sources */,
 				1E9CD19D1B72A94900A9FFE5 /* MPNSAttributedStringToNSDictionaryValueTransformer.m in Sources */,
@@ -824,7 +825,6 @@
 				1E9CD1B01B72A94900A9FFE5 /* MPTypeDescription.m in Sources */,
 				1E9CD1871B72A94900A9FFE5 /* MPABTestDesignerDisconnectMessage.m in Sources */,
 				1E9CD19E1B72A94900A9FFE5 /* MPNSNumberToCGFloatValueTransformer.m in Sources */,
-				1E77C08D1B751C8500F703B1 /* InfoViewController.swift in Sources */,
 				1E9CD18B1B72A94900A9FFE5 /* MPABTestDesignerTweakResponseMessage.m in Sources */,
 				1E9CD1831B72A94900A9FFE5 /* MPABTestDesignerClearResponseMessage.m in Sources */,
 				1E9CD1A71B72A94900A9FFE5 /* MPSurvey.m in Sources */,
