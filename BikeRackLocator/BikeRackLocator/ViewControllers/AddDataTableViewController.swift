@@ -48,8 +48,6 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
 //        }
 
         
-        
-        
         // Set up text fields
         locationTextField.text = "\(latitude), \(longitude)"
         locationTextField.enabled = false
@@ -76,9 +74,9 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
         
         switch textField {
         case titleTextField:
-            maxTextCharacters = 10
+            maxTextCharacters = 25
         case descriptionTextField:
-            maxTextCharacters = 15
+            maxTextCharacters = 150
         default:
             break;
         }

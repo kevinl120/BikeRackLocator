@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set navbar font
         let navigationController = window!.rootViewController as! UINavigationController
-        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName : (UIFont(name: "OpenSans", size: 16))!]
+        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName : (UIFont(name: "OpenSans", size: 17.0))!]
         
         // Set bar button font
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "OpenSans", size: 17.0)!], forState: UIControlState.Normal)
@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set up Parse SDK
         Parse.setApplicationId("xAypJzhkukQ9BFgpUZutJVPrfjZViddmxMIM9egt", clientKey: "mwHwaWQmhG559IjmAV7YniN1w2st7hykbUH5No9a")
         BikeRack.registerSubclass()
+        Flag.registerSubclass()
         
         // Set up Google Maps
         GMSServices.provideAPIKey("AIzaSyAFfX1V2LILrFH2rV4vz-7yb2teagR4FC8")

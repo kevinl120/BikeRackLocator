@@ -131,7 +131,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func findBikeRacks() {
         
         mapView.clear()
-        bikeRacksFound.removeAll(keepCapacity: false)
+        
+        var previousBikeRackCount = bikeRacksFound.count
         
         if isConnectedToNetwork() {
             var query = PFQuery(className: "BikeRack")
@@ -155,6 +156,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 } else {
                     println("Error: \(error!) \(error!.userInfo!)")
                 }
+            }
+            for var i = 0; i < previousBikeRackCount; i++ {
+                bikeRacksFound.removeAtIndex(0)
             }
         } else {
             connectionError()
@@ -217,7 +221,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             updateMap()
         }
         
-        if newLocation.distanceFromLocation(oldLocation) > 25 {
+        if newLocation.distanceFromLocation(oldLocation) > 25 && mapView.selectedMarker == nil {
             findBikeRacks()
         }
     }
@@ -293,6 +297,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             }
             
             infoViewController.bikeRack = bikeRacksFound[counter]
+            
+//            if isConnectedToNetwork() {
+//                var query = PFQuery(className: "BikeRack")
+//                query.whereKey("objectID", equalTo: mapView.selectedMarker.snippet)
+//                query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+//                    if error == nil {
+//                        if let bikeRacks = objects as? [PFObject] {
+//                            for bikeRack in bikeRacks {
+//                                let bikeRack = bikeRack as! BikeRack
+//                                infoViewController.bikeRack = bikeRack
+//                            }
+//                        }
+//                    } else {
+//                        println("Error: \(error!) \(error!.userInfo!)")
+//                    }
+//                }
+//            } else {
+//                connectionError()
+//            }
         }
     }
     

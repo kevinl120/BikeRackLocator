@@ -83,10 +83,10 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         
         let bikeRack = BikeRack()
         
-        if bikeRackTitle == "" {
-            bikeRack.bikeRackTitle = "Bike Rack 1"
-        } else {
+        if let bikeRackTitle = bikeRackTitle {
             bikeRack.bikeRackTitle = bikeRackTitle
+        } else {
+            bikeRack.bikeRackTitle = "Bike Rack"
         }
         
         bikeRack.bikeRackDescription = bikeRackDescription

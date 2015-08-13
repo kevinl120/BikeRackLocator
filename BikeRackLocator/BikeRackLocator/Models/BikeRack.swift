@@ -13,7 +13,6 @@ import Parse
 class BikeRack: PFObject, PFSubclassing {
     
     var photoUploadTask: UIBackgroundTaskIdentifier?
-    
     var image: UIImage?
     
     @NSManaged var location: PFGeoPoint
