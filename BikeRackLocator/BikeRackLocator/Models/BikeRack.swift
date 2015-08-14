@@ -19,7 +19,7 @@ class BikeRack: PFObject, PFSubclassing {
     @NSManaged var imageFile: PFFile
     @NSManaged var bikeRackTitle: String?
     
-    @NSManaged var flags: [Flag]
+    @NSManaged var flags: PFRelation
     
     func upload() {
         

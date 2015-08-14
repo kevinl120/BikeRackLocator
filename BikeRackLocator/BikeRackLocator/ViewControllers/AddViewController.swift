@@ -83,6 +83,24 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         
         let bikeRack = BikeRack()
         
+        var nonExistentFlag = Flag()
+        nonExistentFlag.flagDescription = "Bike Rack does not exist"
+        nonExistentFlag.votes = 0
+        nonExistentFlag.upload()
+        bikeRack.flags.addObject(nonExistentFlag)
+        
+        var inaccessibleFlag = Flag()
+        inaccessibleFlag.flagDescription = "Inaccessible bike rack"
+        inaccessibleFlag.votes = 0
+        inaccessibleFlag.upload()
+        bikeRack.flags.addObject(inaccessibleFlag)
+        
+        var duplicateFlag = Flag()
+        duplicateFlag.flagDescription = "Duplicate Bike Rack"
+        duplicateFlag.votes = 0
+        duplicateFlag.upload()
+        bikeRack.flags.addObject(duplicateFlag)
+        
         if let bikeRackTitle = bikeRackTitle {
             bikeRack.bikeRackTitle = bikeRackTitle
         } else {

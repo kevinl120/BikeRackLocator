@@ -33,17 +33,15 @@ class InfoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-//        bikeRack.imageFile.getDataInBackgroundWithBlock{ (data: NSData?, error: NSError?) -> Void in
-//            self.imageView.image = UIImage(data: data!)
-//        }
-//        
+        bikeRack.imageFile.getDataInBackgroundWithBlock{ (data: NSData?, error: NSError?) -> Void in
+            self.imageView.image = UIImage(data: data!)
+        }
+        
         mapView.camera = GMSCameraPosition.cameraWithLatitude(bikeRack.location.latitude, longitude: bikeRack.location.longitude, zoom: 16)
         var marker = GMSMarker()
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
         marker.map = mapView
-//
-//        self.titleLabel.text = bikeRack.bikeRackTitle
         
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)) {
@@ -180,14 +178,20 @@ class InfoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showFlags" {
+            // create a new Note and hold on to it, to be able to save it later
+            let flagTableViewController = segue.destinationViewController as! FlagTableViewController
+            flagTableViewController.bikeRack = self.bikeRack
+        }
     }
-    */
+
 
 }
