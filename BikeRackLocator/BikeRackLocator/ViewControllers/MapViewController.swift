@@ -44,7 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("findBikeRacks")), animated: true)
         
-        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingsPressed")), animated: true)
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Licenses", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingsPressed")), animated: true)
         
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("findBikeRacks"), userInfo: nil, repeats: false)
         
@@ -280,7 +280,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     // MARK: - Navigation
     
     func settingsPressed() {
-        self.performSegueWithIdentifier("showSettings", sender: nil)
+        self.performSegueWithIdentifier("showLicense", sender: nil)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
