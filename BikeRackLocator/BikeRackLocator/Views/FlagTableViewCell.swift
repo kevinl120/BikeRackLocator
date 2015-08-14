@@ -11,6 +11,7 @@ import UIKit
 class FlagTableViewCell: UITableViewCell {
 
     @IBOutlet weak var flagDescriptionLabel: UILabel!
+    @IBOutlet weak var flagVotesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +24,7 @@ class FlagTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func flagButtonPressed(sender: AnyObject) {
+        
+    }
 }

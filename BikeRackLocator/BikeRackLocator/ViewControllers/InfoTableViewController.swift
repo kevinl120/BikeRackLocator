@@ -123,7 +123,7 @@ class InfoTableViewController: UITableViewController {
                 let appleMapsAction = UIAlertAction(title: "Apple Maps", style: .Default) { (action) in
                     UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/maps?saddr=Current%20Location&daddr=\(self.bikeRack.location.latitude),\(self.bikeRack.location.longitude)")!)
                 }
-                alertController.addAction(googleMapsAction)
+                alertController.addAction(appleMapsAction)
                 
                 // Show the alert controller
                 self.presentViewController(alertController, animated: true, completion: nil)

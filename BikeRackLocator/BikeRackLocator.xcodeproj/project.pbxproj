@@ -119,6 +119,7 @@
 		1EFA73A31B7D01BC0038DCA2 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */; };
 		1EFA73A71B7DA92A0038DCA2 /* FlagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA73A61B7DA92A0038DCA2 /* FlagTableViewController.swift */; };
 		1EFA73AD1B7DAB580038DCA2 /* FlagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA73AC1B7DAB580038DCA2 /* FlagTableViewCell.swift */; };
+		1EFA73B11B7E2A1A0038DCA2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA73B01B7E2A1A0038DCA2 /* SettingsTableViewController.swift */; };
 		1EFFD9E41B66926C00A0074A /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */; };
 		DB0F0D340E11D7F3E18C2B38 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907D61C78CF7556E9CF7AD67 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -307,6 +308,7 @@
 		1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		1EFA73A61B7DA92A0038DCA2 /* FlagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagTableViewController.swift; sourceTree = "<group>"; };
 		1EFA73AC1B7DAB580038DCA2 /* FlagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagTableViewCell.swift; sourceTree = "<group>"; };
+		1EFA73B01B7E2A1A0038DCA2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1EFFD9E31B66926C00A0074A /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		2AC48B98C473D031DCC3807A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		907D61C78CF7556E9CF7AD67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +359,7 @@
 				1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */,
 				1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */,
 				1EFA73A61B7DA92A0038DCA2 /* FlagTableViewController.swift */,
+				1EFA73B01B7E2A1A0038DCA2 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				1E9CD1B81B72A94900A9FFE5 /* MPWebSocket.m in Sources */,
 				1E9CD1971B72A94900A9FFE5 /* MPDesignerTrackMessage.m in Sources */,
 				1E9CD1931B72A94900A9FFE5 /* MPCGSizeToNSDictionaryValueTransformer.m in Sources */,
+				1EFA73B11B7E2A1A0038DCA2 /* SettingsTableViewController.swift in Sources */,
 				1EFFD9E41B66926C00A0074A /* PhotoTakingHelper.swift in Sources */,
 				1ED54A111B79154900B58FFA /* AddDataTableViewController.swift in Sources */,
 				1E9CD1BE1B72A94900A9FFE5 /* UIImage+MPAverageColor.m in Sources */,

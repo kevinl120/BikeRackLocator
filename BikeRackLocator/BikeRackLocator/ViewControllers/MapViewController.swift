@@ -42,6 +42,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         addBikeRackButton.layer.cornerRadius = 20.0
         
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("findBikeRacks")), animated: true)
+        
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingsPressed")), animated: true)
+        
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("findBikeRacks"), userInfo: nil, repeats: false)
         
 //        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(title: "Refresh", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("updateMap")), animated: true)
@@ -149,7 +153,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                             
                             var marker = GMSMarker()
                             marker.position = CLLocationCoordinate2DMake(bikeRack.location.latitude, bikeRack.location.longitude)
-                            marker.title = bikeRack.bikeRackTitle
+                            marker.title = bikeRack.bikeRackDescription
                             marker.map = self.mapView
                             marker.icon = bikeRack.image
                             marker.snippet = bikeRack.objectId
@@ -275,6 +279,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     // MARK: - Navigation
     
+    func settingsPressed() {
+        self.performSegueWithIdentifier("showSettings", sender: nil)
+    }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         return hasUserLocation()
     }
@@ -289,7 +297,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             
             addViewController.latitude = (locationManager.location.coordinate.latitude.description as NSString).doubleValue
             addViewController.longitude = (locationManager.location.coordinate.longitude.description as NSString).doubleValue
-        } else {
+        } else if segue.destinationViewController.isKindOfClass(InfoTableViewController) {
             var infoViewController = segue.destinationViewController as! InfoTableViewController
             
             var counter = 0

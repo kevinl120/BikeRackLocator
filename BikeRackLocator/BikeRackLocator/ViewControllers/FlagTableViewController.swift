@@ -61,7 +61,6 @@ class FlagTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println(flags.count)
         return flags.count
     }
 
@@ -70,6 +69,7 @@ class FlagTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("FlagCell", forIndexPath: indexPath) as! FlagTableViewCell
 
         cell.flagDescriptionLabel.text = flags[indexPath.row].flagDescription
+        cell.flagVotesLabel.text = flags[indexPath.row].votes.stringValue
         
         return cell
     }

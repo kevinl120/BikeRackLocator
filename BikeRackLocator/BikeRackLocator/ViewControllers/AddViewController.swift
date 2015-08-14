@@ -17,7 +17,6 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
     
     var latitude: Double!
     var longitude: Double!
-    var bikeRackTitle: String!
     var bikeRackDescription: String!
     var image: UIImage!
     
@@ -83,29 +82,36 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         
         let bikeRack = BikeRack()
         
-        var nonExistentFlag = Flag()
-        nonExistentFlag.flagDescription = "Bike Rack does not exist"
-        nonExistentFlag.votes = 0
-        nonExistentFlag.upload()
-        bikeRack.flags.addObject(nonExistentFlag)
+//        var nonExistentFlag = Flag()
+//        nonExistentFlag.flagDescription = "Bike Rack does not exist"
+//        nonExistentFlag.votes = 0
+//        nonExistentFlag.upload()
+//        bikeRack.flags.addObject(nonExistentFlag)
+//        
+//        var inaccessibleFlag = Flag()
+//        inaccessibleFlag.flagDescription = "Inaccessible bike rack"
+//        inaccessibleFlag.votes = 0
+//        inaccessibleFlag.upload()
+//        bikeRack.flags.addObject(inaccessibleFlag)
+//        
+//        var duplicateFlag = Flag()
+//        duplicateFlag.flagDescription = "Duplicate Bike Rack"
+//        duplicateFlag.votes = 0
+//        duplicateFlag.upload()
+//        bikeRack.flags.addObject(duplicateFlag)
         
-        var inaccessibleFlag = Flag()
-        inaccessibleFlag.flagDescription = "Inaccessible bike rack"
-        inaccessibleFlag.votes = 0
-        inaccessibleFlag.upload()
-        bikeRack.flags.addObject(inaccessibleFlag)
+//        if let bikeRackTitle = bikeRackTitle {
+//            bikeRack.bikeRackTitle = bikeRackTitle
+//        } else {
+//            bikeRack.bikeRackTitle = "Bike Rack"
+//        }
         
-        var duplicateFlag = Flag()
-        duplicateFlag.flagDescription = "Duplicate Bike Rack"
-        duplicateFlag.votes = 0
-        duplicateFlag.upload()
-        bikeRack.flags.addObject(duplicateFlag)
-        
-        if let bikeRackTitle = bikeRackTitle {
-            bikeRack.bikeRackTitle = bikeRackTitle
+        if let bikeRackDescription = bikeRackDescription {
+            bikeRack.bikeRackDescription = bikeRackDescription
         } else {
-            bikeRack.bikeRackTitle = "Bike Rack"
+            bikeRack.bikeRackDescription = "Bike Rack"
         }
+
     
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
         
@@ -134,7 +140,6 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
 }
 
 protocol AddDataTableViewControllerProtocol {
-    var bikeRackTitle: String! {get set}
     var bikeRackDescription: String! {get set}
     var image: UIImage! {get set}
 }

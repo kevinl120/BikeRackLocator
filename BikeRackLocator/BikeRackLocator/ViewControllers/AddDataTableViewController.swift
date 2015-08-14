@@ -20,8 +20,10 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var dataEntryTableView: UITableView!
     
     @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
+    
+    @IBOutlet weak var addImageButton: UIButton!
+    @IBOutlet weak var addedImage: UIImageView!
     
     var photoTakingHelper: PhotoTakingHelper?
     
@@ -65,13 +67,13 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
         locationTextField.enabled = false
         //locationTextField.backgroundColor = UIColor.lightGrayColor()
         
-        titleTextField.delegate = self
         descriptionTextField.delegate = self
     }
 
     @IBAction func addImage(sender: AnyObject) {
         photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
             self.delegate.image = image
+            self.addedImage.image = image
         })
     }
     
@@ -85,10 +87,8 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
         var maxTextCharacters = 0
         
         switch textField {
-        case titleTextField:
-            maxTextCharacters = 25
         case descriptionTextField:
-            maxTextCharacters = 150
+            maxTextCharacters = 50
         default:
             break;
         }
@@ -107,11 +107,11 @@ class AddDataTableViewController: UITableViewController, UITextFieldDelegate {
             }
             return false
         } else {
-            if textField == titleTextField {
-                delegate.bikeRackTitle = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-            } else {
+//            if textField == titleTextField {
+//                delegate.bikeRackTitle = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+//            } else {
                 delegate.bikeRackDescription = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-            }
+//            }
             
             return true
         }
