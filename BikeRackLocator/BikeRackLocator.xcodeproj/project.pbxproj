@@ -112,7 +112,6 @@
 		1ED54A0C1B786E8100B58FFA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED54A021B786E8100B58FFA /* OpenSans-Regular.ttf */; };
 		1ED54A0D1B786E8100B58FFA /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED54A031B786E8100B58FFA /* OpenSans-Semibold.ttf */; };
 		1ED54A0E1B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ED54A041B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf */; };
-		1ED54A111B79154900B58FFA /* AddDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */; };
 		1ED54A161B7A8B5900B58FFA /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED54A151B7A8B5900B58FFA /* Flag.swift */; };
 		1EFA739D1B7CFEC50038DCA2 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */; };
 		1EFA739F1B7CFECD0038DCA2 /* SMCalloutView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1EFA739E1B7CFECD0038DCA2 /* SMCalloutView.podspec */; };
@@ -300,7 +299,6 @@
 		1ED54A021B786E8100B58FFA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		1ED54A031B786E8100B58FFA /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		1ED54A041B786E8100B58FFA /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataTableViewController.swift; sourceTree = "<group>"; };
 		1ED54A151B7A8B5900B58FFA /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flag.swift; path = BikeRackLocator/Models/Flag.swift; sourceTree = SOURCE_ROOT; };
 		1EFA739B1B7CFEC50038DCA2 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCalloutView.h; sourceTree = "<group>"; };
 		1EFA739C1B7CFEC50038DCA2 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCalloutView.m; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 			children = (
 				1E1244FF1B6014A20030A755 /* MapViewController.swift */,
 				1E1245011B601C170030A755 /* AddViewController.swift */,
-				1ED54A101B79154900B58FFA /* AddDataTableViewController.swift */,
 				1EFA73A21B7D01BC0038DCA2 /* InfoTableViewController.swift */,
 				1EFA73A61B7DA92A0038DCA2 /* FlagTableViewController.swift */,
 				1EFA73B01B7E2A1A0038DCA2 /* SettingsTableViewController.swift */,
@@ -818,7 +815,6 @@
 				1E9CD1931B72A94900A9FFE5 /* MPCGSizeToNSDictionaryValueTransformer.m in Sources */,
 				1EFA73B11B7E2A1A0038DCA2 /* SettingsTableViewController.swift in Sources */,
 				1EFFD9E41B66926C00A0074A /* PhotoTakingHelper.swift in Sources */,
-				1ED54A111B79154900B58FFA /* AddDataTableViewController.swift in Sources */,
 				1E9CD1BE1B72A94900A9FFE5 /* UIImage+MPAverageColor.m in Sources */,
 				1E9CD18E1B72A94900A9FFE5 /* MPCATransform3DToNSDictionaryValueTransformer.m in Sources */,
 				1ED54A161B7A8B5900B58FFA /* Flag.swift in Sources */,

@@ -11,14 +11,20 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class AddViewController: UIViewController, AddDataTableViewControllerProtocol, GMSMapViewDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelegate {
     
     @IBOutlet var mapView: GMSMapView!
     
+    @IBOutlet weak var addImageButton: UIButton!
+    @IBOutlet weak var addedImage: UIImageView!
+    @IBOutlet weak var streetAddressTextField: UITextField!
+    @IBOutlet weak var cityStateZipTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
     var latitude: Double!
     var longitude: Double!
-    var bikeRackDescription: String!
-    var image: UIImage!
+    
+    var photoTakingHelper: PhotoTakingHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,71 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         marker.position = CLLocationCoordinate2DMake(latitude!, longitude!)
         marker.map = mapView
         
+        // Set up text fields
+        descriptionTextField.delegate = self
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(CLLocationCoordinate2DMake(latitude, longitude)) {
+            (let gmsReverseGeocodeResponse: GMSReverseGeocodeResponse!, let error: NSError!) -> Void in
+            
+            let gmsAddress: GMSAddress = gmsReverseGeocodeResponse.firstResult()
+            
+            self.streetAddressTextField.text = "\(gmsAddress.thoroughfare)"
+            self.cityStateZipTextField.text = "\(gmsAddress.locality), \(gmsAddress.administrativeArea) \(gmsAddress.postalCode)"
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set up keyboard to not block text fields
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Unregister keyboard notifications
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow() {
+        if self.view.frame.origin.y >= 0 {
+            setViewMovedUp(true)
+        } else if (self.view.frame.origin.y < 0) {
+            setViewMovedUp(false)
+        }
+    }
+    
+    func keyboardWillHide() {
+        if self.view.frame.origin.y >= 0 {
+            setViewMovedUp(true)
+        } else if (self.view.frame.origin.y < 0) {
+            setViewMovedUp(false)
+        }
+    }
+    
+    func setViewMovedUp(movedUp: Bool) {
+        
+        let keyboardOffset: CGFloat = 80.0
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.3)
+        
+        var rect = self.view.frame
+        
+        if movedUp {
+            rect.origin.y -= keyboardOffset
+            rect.size.height += keyboardOffset
+        } else {
+            rect.origin.y += keyboardOffset
+            rect.size.height -= keyboardOffset
+        }
+        self.view.frame = rect
+        
+        UIView.commitAnimations()
     }
 
     func drawDisplay() {
@@ -57,6 +128,13 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         //        mapView.layer.shadowOpacity = 1.0
         //        mapView.layer.shadowRadius = 1.0
         //        mapView.layer.shadowPath = shadowPath.CGPath
+    }
+    
+    @IBAction func addImageButtonPressed(sender: AnyObject) {
+        photoTakingHelper = PhotoTakingHelper(viewController: self, callback: { (image: UIImage?) in
+            self.addedImage.image = image
+            self.addImageButton.hidden = true
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,23 +177,17 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
 //        duplicateFlag.votes = 0
 //        duplicateFlag.upload()
 //        bikeRack.flags.addObject(duplicateFlag)
+
         
-//        if let bikeRackTitle = bikeRackTitle {
-//            bikeRack.bikeRackTitle = bikeRackTitle
-//        } else {
-//            bikeRack.bikeRackTitle = "Bike Rack"
-//        }
-        
-        if let bikeRackDescription = bikeRackDescription {
-            bikeRack.bikeRackDescription = bikeRackDescription
-        } else {
+        if descriptionTextField.text == "" {
             bikeRack.bikeRackDescription = "Bike Rack"
+        } else {
+            bikeRack.bikeRackDescription = descriptionTextField.text
         }
 
-    
         bikeRack.location = PFGeoPoint(latitude: latitude, longitude: longitude)
         
-        if let image = image {
+        if let image = addedImage.image {
             bikeRack.image = image
         }
 
@@ -124,24 +196,40 @@ class AddViewController: UIViewController, AddDataTableViewControllerProtocol, G
         cancelButtonPressed()
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        var maxTextCharacters = 100
+        
+        switch textField {
+        case descriptionTextField:
+            maxTextCharacters = 50
+        default:
+            break;
+        }
+        
+        if (range.length + range.location > count(textField.text)) {
+            return false;
+        }
+        
+        let newLength = count(textField.text) + count(string) - range.length
+        
+        if newLength > maxTextCharacters {
+            if count(string) > 1 {
+                var alert = UIAlertView(title: "Oops!", message: "That message is too long. Keep it under \(maxTextCharacters) characters.", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
+            }
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "showDataEntry" {
-            // create a new Note and hold on to it, to be able to save it later
-            let addDataTableViewController = segue.destinationViewController as! AddDataTableViewController
-            addDataTableViewController.latitude = self.latitude
-            addDataTableViewController.longitude = self.longitude
-            addDataTableViewController.delegate = self;
-        }
     }
+    */
 }
-
-protocol AddDataTableViewControllerProtocol {
-    var bikeRackDescription: String! {get set}
-    var image: UIImage! {get set}
-}
-
 
