@@ -281,10 +281,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-L6-WA0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-L6-WA0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="2571.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">THE FOLLOWING SETS FORTH ATTRIBUTION NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE INCLUDED IN PORTIONS OF BIKERACKLOCATOR  --------  The following software may be included in this product: SMCalloutView. This software is subject to the following license and notice:  Apache License
+                                <mutableString key="text">THE FOLLOWING SETS FORTH ATTRIBUTION NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE INCLUDED IN PORTIONS OF RACKSCOUT  --------  The following software may be included in this product: SMCalloutView. This software is subject to the following license and notice:  Apache License
 
 Version 2.0, January 2004
 
@@ -359,7 +359,6 @@ END OF TERMS AND CONDITIONS
         <!--Add View Controller-->
         <scene sceneID="aMu-Jt-5ht">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ8-rY-r7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WJR-x0-HWx" customClass="AddViewController" customModule="BikeRackLocator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ec1-uQ-7Aw"/>
@@ -486,6 +485,7 @@ END OF TERMS AND CONDITIONS
                         <outlet property="streetAddressTextField" destination="BbQ-pF-SWn" id="ZS6-mm-yeG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ8-rY-r7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2807" y="-378"/>
         </scene>
