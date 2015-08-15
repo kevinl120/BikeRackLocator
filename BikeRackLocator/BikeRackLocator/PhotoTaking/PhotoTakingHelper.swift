@@ -11,6 +11,7 @@ import UIKit
 typealias PhotoTakingHelperCallback = UIImage? -> Void
 
 class PhotoTakingHelper: NSObject {
+    // View controller on which AlertViewController and UIImagePickerController are presented
     weak var viewController: UIViewController!
     var callback: PhotoTakingHelperCallback
     var imagePickerController: UIImagePickerController?
@@ -21,12 +22,40 @@ class PhotoTakingHelper: NSObject {
         
         super.init()
         
-        showImagePickerController()
+        showPhotoSourceSelection()
     }
     
-    func showImagePickerController() {
+    // Presents dialog that allows user to choose between camera and photo library
+    func showPhotoSourceSelection() {
+        
+        let alertController = UIAlertController(title: nil, message: "Where do you want to get your picture from?", preferredStyle: .ActionSheet)
+        
+        // Adds cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // Only show camera option if rear camera is available
+        if UIImagePickerController.isCameraDeviceAvailable(.Rear) {
+            let cameraAction = UIAlertAction(title: "Photo from Camera", style: .Default) { (action) in
+                self.showImagePickerController(.Camera)
+            }
+            alertController.addAction(cameraAction)
+        }
+        
+        // Add choice of selecting photo from library
+        let photoLibraryAction = UIAlertAction(title: "Photo from Library", style: .Default) { (action) in
+            self.showImagePickerController(.PhotoLibrary)
+        }
+        alertController.addAction(photoLibraryAction)
+        
+        // Show the alert controller
+        viewController.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showImagePickerController(sourceType: UIImagePickerControllerSourceType) {
         imagePickerController = UIImagePickerController()
-        imagePickerController!.sourceType = .PhotoLibrary
+        //imagePickerController!.allowsEditing = true
+        imagePickerController!.sourceType = sourceType
         imagePickerController!.delegate = self
         
         self.viewController.presentViewController(imagePickerController!, animated: true, completion: nil)
@@ -46,3 +75,4 @@ extension PhotoTakingHelper: UIImagePickerControllerDelegate, UINavigationContro
     }
     
 }
+

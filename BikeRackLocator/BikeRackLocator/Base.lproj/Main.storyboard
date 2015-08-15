@@ -284,7 +284,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-L6-WA0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="2571.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">THE FOLLOWING SETS FORTH ATTRIBUTION NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE INCLUDED IN PORTIONS OF RACKSCOUT  --------  The following software may be included in this product: SMCalloutView. This software is subject to the following license and notice:  Apache License
+                                <string key="text">THE FOLLOWING SETS FORTH ATTRIBUTION NOTICES FOR THIRD PARTY SOFTWARE THAT MAY BE INCLUDED IN PORTIONS OF RACKSCOUT  --------  The following software may be included in this product: SMCalloutView. This software is subject to the following license and notice:  Apache License
 
 Version 2.0, January 2004
 
@@ -338,7 +338,7 @@ You may add Your own copyright statement to Your modifications and may provide a
 
 END OF TERMS AND CONDITIONS
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -412,8 +412,12 @@ END OF TERMS AND CONDITIONS
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-gM-cJM">
-                                                <rect key="frame" x="33" y="33" width="30" height="30"/>
-                                                <state key="normal" title="Add">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="96" id="50U-uR-Jpi"/>
+                                                    <constraint firstAttribute="width" constant="96" id="cQH-Ke-k9w"/>
+                                                </constraints>
+                                                <state key="normal" title="Add Image">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
